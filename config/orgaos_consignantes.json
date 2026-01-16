@@ -1,0 +1,93 @@
+{
+  "descricao": "Mapa de orgaos/convênios para codigo de consignante",
+  "campo_origem": "CONSIGNATARIA",
+  "campo_destino": "COD_CONSIGNANTE",
+  "valor_padrao": "#N/D",
+  "mapa": {
+    "SIAPE": 14,
+    "SIAPE CONSIG": 14,
+    "SIAPE BENEFICIO": 14,
+    "SIAPE BENEFÍCIO": 14,
+    "SIAPE HP": 14,
+
+    "INSS": 39,
+    "INSS RMC": 39,
+    "INSS BENEFICIO": 39,
+    "INSS BENEF SEG": 39,
+    "INSS BENEF COMP": 39,
+    "INSS BEN S FL": 39,
+    "INSS RMC SEG": 39,
+    "INSS RMC COMPL": 39,
+    "INSS RMC S FL": 39,
+
+    "IGPREV": 18,
+    "IGEPREV": 18,
+
+    "GOVERNO DA PARAIBA": 34,
+    "GOVERNO DA PARAÍBA": 34,
+    "GOV PARAIBA": 34,
+    "GOV PARAIBA BD": 34,
+    "GOV PB INSPFEM": 34,
+    "PBPREV": 140,
+
+    "GOVERNO DO MARANHAO": 20,
+    "GOVERNO DO MARANHÃO": 20,
+    "GOV MARANHAO": 20,
+    "GOV MARANHÃO CC": 20,
+    "GOV MARANHÃO CB": 20,
+
+    "GOVERNO DO PIAUI": 25,
+    "GOVERNO DO PIAUÍ": 25,
+    "GOV PIAUI": 25,
+    "GOV PIAUÍ": 25,
+    "GOV PI SEG": 25,
+    "GOV PIAUÍ CC": 25,
+    "GOV PIAUÍ CB": 25,
+
+    "GOVERNO DE SAO PAULO": 38,
+    "GOVERNO DE SÃO PAULO": 38,
+    "GOV SP": 38,
+
+    "SPPREV": 141,
+    "GOV SP PREV": 141,
+    "GOV SP - SPPREV": 141,
+
+    "GOVERNO DE MINAS GERAIS": 41,
+    "GOVERNO DE MINAS GERAIS - SEPLAG": 145,
+    "GOV MG - SEPLAG": 145,
+    "GOVERNO DE MINAS GERAIS - IPSEMG": 142,
+    "GOV MG - IPSEMG": 142,
+    "GOVERNO DE MINAS GERAIS - CBMMG": 143,
+    "GOV MG - CBMMG": 143,
+    "GOVERNO DE MINAS GERAIS - PMMG": 201,
+
+    "GOVERNO DO RIO DE JANEIRO": 76,
+    "GOV RJ": 76,
+    "GOV RJ SEG": 76,
+    "GOV RJ M NEG": 76,
+
+    "PREFEITURA DE SAO PAULO": 52,
+    "PREF SAO PAULO": 52,
+    "PREF DE SP PMSP": 52,
+
+    "PREFEITURA DE JOAO PESSOA": 47,
+    "PREF JOAO PESSOA": 47,
+
+    "PREFEITURA DE RECIFE": 49,
+    "PREF RECIFE": 49,
+
+    "PREFEITURA DE CAMPINA GRANDE": 70,
+    "CAMPINA G-IPSEM": 146,
+
+    "EXERCITO": 16,
+    "EXÉRCITO": 16,
+    "MARINHA": 17,
+    "AERONAUTICA": 79,
+    "AERONÁUTICA": 79,
+
+    "FGTS": 124,
+    "SERPRO": 123,
+
+    "GRUPO AKRK": 31
+  }
+}
