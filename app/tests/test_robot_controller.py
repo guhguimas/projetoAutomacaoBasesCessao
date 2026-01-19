@@ -1,5 +1,5 @@
 import time
-from app.core.robot_controller import RobotController
+from app.controller.robot_controller import RobotController
 
 
 def log_to_console(message):

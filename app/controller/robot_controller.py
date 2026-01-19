@@ -2,6 +2,8 @@ import threading
 import time
 from datetime import datetime
 from enum import Enum
+from logs.log_manager import LogManager
+from uuid import uuid4
 
 class RobotStatus(Enum):
     IDLE = "idle"
@@ -12,11 +14,18 @@ class RobotStatus(Enum):
 
 
 class RobotController:
-    def __init__(self, log_callback=None):
+    def __init__(self, log_callback=None, status_callback=None, finish_callback=None):
+        self.status = RobotStatus.IDLE
+        self._stop_event = threading.Event()
+        self.log = log_callback
+        self.on_finish = finish_callback
+        
         self.log_callback = log_callback
+        self.status_callback = status_callback
         self._thread = None
-        self._running = False
-        self.status = "IDLE"
+        
+        self.log_manager = LogManager()
+        self.execution_id = None
 
     def _log(self, message, level="INFO"):
         timestamp = datetime.now().strftime("%H:%M:%S")
@@ -25,90 +34,115 @@ class RobotController:
         if self.log_callback:
             self.log_callback(log_message)
 
+        if self.execution_id:
+            self.log_manager.add_log(
+                execution_id=self.execution_id,
+                level=level,
+                message=message
+            )
+
     def start(self):
-        if self._running:
-            self._log("Robô já está em execução", "WARNING")
+        if self.status == RobotStatus.RUNNING:
             return
+
+        self.execution_id = self.log_manager.start_execution()
         
-        self._running = True
-        self.status = "RUNNING"
+        self.status = RobotStatus.RUNNING
+
+        if self.status_callback:
+            self.status_callback(self.status)
+        
+        self._stop_event.clear()
 
         self._thread = threading.Thread(target=self._run, daemon=True)
         self._thread.start()
     
     def stop(self):
-        if not self._running:
-            self._log("Robô não está em execução", "WARNING")
+        if self.status != RobotStatus.RUNNING:
             return
-        
+
         self._log("Solicitação de parada recebida", "INFO")
-        self._running = False
-        self.status = "STOPPED"
+        self._stop_event.set()
+        self._set_status(RobotStatus.STOPPED)
 
     def _run(self):
         try:
-            self.status = "RUNNING"
             self._log("Iniciando processamento do robô", "SUCCESS")
 
             self._step_load_files()
-            if not self._running: return
+            if self._stop_event.is_set(): 
+                return
 
             self._step_process_data()
-            if not self._running: return
+            if self._stop_event.is_set(): 
+                return
             
             self._step_validate()
-            if not self._running: return
+            if self._stop_event.is_set(): 
+                return
             
             self._step_export()
-            if not self._running: return
-            
-            self._step_finalize()
 
-            self.status = "FINISHED"
-            self._log("Processamento finalizado com sucesso", "SUCCESS")
+            if not self._stop_event.is_set():
+                self._set_status(RobotStatus.FINISHED)
+                self._log("Processamento finalizado com sucesso", "SUCCESS")
         
         except Exception as e:
-            self.status = "ERROR"
+            self._set_status(RobotStatus.ERROR)
             self._log(f"Erro inesperado: {e}", "ERROR")
 
         finally:
-            if not self._running and self.status != "ERROR":
-                self._log("Processamento interrompido pelo usuário", "WARNING")
-            
-            self._running = False
+            if self.status == RobotStatus.STOPPED:
+                self.log_manager.finish_execution(self.execution_id, "STOPPED")
+            elif self.status == RobotStatus.ERROR:
+                self.log_manager.finish_execution(self.execution_id, "ERROR")
+            else:
+                self.log_manager.finish_execution(self.execution_id, "FINISHED")
+                        
+            if self.on_finish:
+                self.on_finish()
 
+
+    def _set_status(self, status: RobotStatus):
+        self.status = status
+        if self.status_callback:
+            self.status_callback(status)
 
     def _step_load_files(self):
-        if not self._running:
-            return
-            
         self._log("Etapa 1: Carregando arquivos")
         time.sleep(1)
 
-    def _step_process_data(self):
-        if not self._running:
+        if self._stop_event.is_set():
             return
-            
+        
+    def _step_process_data(self):
         self._log("Etapa 2: Processando dados")
         time.sleep(1)
 
-    def _step_validate(self):
-        if not self._running:
+        if self._stop_event.is_set():
             return
-            
+        
+
+    def _step_validate(self):
         self._log("Etapa 3: Validando contratos")
         time.sleep(1)
 
-    def _step_export(self):
-        if not self._running:
+        if self._stop_event.is_set():
             return
-            
+        
+
+    def _step_export(self):
         self._log("Etapa 4: Exportando Planilha Cessao")
         time.sleep(1)
 
-    def _step_finalize(self):
-        if not self._running:
+        if self._stop_event.is_set():
             return
-            
+        
+
+    def _step_finalize(self):
         self._log("Etapa 5; Finalização")
         time.sleep(1)
+
+        if self._stop_event.is_set():
+            return
+        
