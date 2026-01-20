@@ -2156,6 +2156,100 @@
                     "message": "Processamento finalizado com sucesso"
                 }
             ]
+        },
+        {
+            "execution_id": "2026-01-20_17-57-23",
+            "status": "STOPPED",
+            "started_at": "2026-01-20 17:57:23",
+            "finished_at": "2026-01-01/20/26 17:57:25",
+            "logs": [
+                {
+                    "time": "17:57:23",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "17:57:23",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "17:57:24",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "17:57:24",
+                    "level": "INFO",
+                    "message": "Solicitação de parada recebida"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_17-59-46",
+            "status": "STOPPED",
+            "started_at": "2026-01-20 17:59:46",
+            "finished_at": "2026-01-01/20/26 17:59:48",
+            "logs": [
+                {
+                    "time": "17:59:46",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "17:59:46",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "17:59:47",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "17:59:47",
+                    "level": "INFO",
+                    "message": "Solicitação de parada recebida"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_17-59-51",
+            "status": "FINISHED",
+            "started_at": "2026-01-20 17:59:51",
+            "finished_at": "2026-01-01/20/26 17:59:55",
+            "logs": [
+                {
+                    "time": "17:59:51",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "17:59:51",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "17:59:52",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "17:59:53",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "17:59:54",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "17:59:55",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
         }
     ]
 }

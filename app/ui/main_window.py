@@ -1,3 +1,4 @@
+import os
 import tkinter as tk
 from tkinter import filedialog, messagebox
 from tkinter.scrolledtext import ScrolledText
@@ -20,6 +21,7 @@ class MainWindow:
 
         self._reset_progress()
         self.status_labels = {}
+        self.file_name_labels = {}
         self._build_layout()
 
         self.logger = UILogger(self.log_area)
@@ -125,6 +127,9 @@ class MainWindow:
         for key, label in self.status_labels.items():
             label.config(text="Não selecionado")
 
+        for key, label in self.file_name_labels.items():
+            label.config(text="-")
+
         self._clear_logs()
         self.logger.log("Programa resetado.", "INFO")
 
@@ -191,6 +196,12 @@ class MainWindow:
 
         self.file_manager.set_file(key, path)
 
+        filename = os.path.basename(path)
+
+        self.file_name_labels[key].config(text=filename)
+
+        self.status_labels[key].config(text="Selecionado")
+
         if key in self.status_labels:
             self.status_labels[key].config(text="Selecionado")
 
@@ -223,7 +234,11 @@ class MainWindow:
         lbl_status = tk.Label(row, text="Não selecionado", width=18, anchor="w")
         lbl_status.pack(side=tk.LEFT, padx=5)
 
+        lbl_file = tk.Label(row, text="-", width=50, anchor="w")
+        lbl_file.pack(side=tk.LEFT, padx=5)
+
         self.status_labels[key] = lbl_status
+        self.file_name_labels[key] = lbl_file
 
         btn_select = tk.Button(
             row,
