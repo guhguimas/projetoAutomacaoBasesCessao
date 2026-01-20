@@ -14,7 +14,7 @@ class RobotStatus(Enum):
 
 
 class RobotController:
-    def __init__(self, log_callback=None, status_callback=None, finish_callback=None):
+    def __init__(self, log_callback=None, status_callback=None, finish_callback=None, progress_callback=None):
         self.status = RobotStatus.IDLE
         self._stop_event = threading.Event()
         self.log = log_callback
@@ -26,6 +26,8 @@ class RobotController:
         
         self.log_manager = LogManager()
         self.execution_id = None
+
+        self.progress_callback = progress_callback
 
     def _log(self, message, level="INFO"):
         timestamp = datetime.now().strftime("%H:%M:%S")
@@ -69,18 +71,22 @@ class RobotController:
         try:
             self._log("Iniciando processamento do robô", "SUCCESS")
 
+            self._progress(1, 4, "Carregando arquivos")
             self._step_load_files()
             if self._stop_event.is_set(): 
                 return
 
+            self._progress(2, 4, "Processando dados")
             self._step_process_data()
             if self._stop_event.is_set(): 
                 return
             
+            self._progress(3, 4, "Validando contratos")
             self._step_validate()
             if self._stop_event.is_set(): 
                 return
             
+            self._progress(4, 4, "Exportando planilha")
             self._step_export()
 
             if not self._stop_event.is_set():
@@ -102,7 +108,6 @@ class RobotController:
             if self.on_finish:
                 self.on_finish()
 
-
     def _set_status(self, status: RobotStatus):
         self.status = status
         if self.status_callback:
@@ -122,7 +127,6 @@ class RobotController:
         if self._stop_event.is_set():
             return
         
-
     def _step_validate(self):
         self._log("Etapa 3: Validando contratos")
         time.sleep(1)
@@ -130,7 +134,6 @@ class RobotController:
         if self._stop_event.is_set():
             return
         
-
     def _step_export(self):
         self._log("Etapa 4: Exportando Planilha Cessao")
         time.sleep(1)
@@ -138,11 +141,14 @@ class RobotController:
         if self._stop_event.is_set():
             return
         
-
     def _step_finalize(self):
         self._log("Etapa 5; Finalização")
         time.sleep(1)
 
         if self._stop_event.is_set():
             return
-        
+    
+    def _progress(self, current_step, total_steps, message):
+        if self.progress_callback:
+            self.progress_callback(current_step, total_steps, message)
+

@@ -1510,6 +1510,500 @@
                     "message": "Solicitação de parada recebida"
                 }
             ]
+        },
+        {
+            "execution_id": "2026-01-20_15-29-14",
+            "status": "FINISHED",
+            "started_at": "2026-01-20 15:29:14",
+            "finished_at": "2026-01-01/20/26 15:29:18",
+            "logs": [
+                {
+                    "time": "15:29:14",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "15:29:14",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "15:29:15",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "15:29:16",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "15:29:17",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "15:29:18",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_15-29-23",
+            "status": "STOPPED",
+            "started_at": "2026-01-20 15:29:23",
+            "finished_at": "2026-01-01/20/26 15:29:25",
+            "logs": [
+                {
+                    "time": "15:29:23",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "15:29:23",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "15:29:24",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "15:29:25",
+                    "level": "INFO",
+                    "message": "Solicitação de parada recebida"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_15-54-06",
+            "status": "ERROR",
+            "started_at": "2026-01-20 15:54:06",
+            "finished_at": "2026-01-01/20/26 15:54:06",
+            "logs": [
+                {
+                    "time": "15:54:06",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "15:54:06",
+                    "level": "ERROR",
+                    "message": "Erro inesperado: name 'total_stpes' is not defined"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_15-54-24",
+            "status": "ERROR",
+            "started_at": "2026-01-20 15:54:24",
+            "finished_at": "2026-01-01/20/26 15:54:24",
+            "logs": [
+                {
+                    "time": "15:54:24",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "15:54:24",
+                    "level": "ERROR",
+                    "message": "Erro inesperado: name 'total_stpes' is not defined"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_15-55-31",
+            "status": "ERROR",
+            "started_at": "2026-01-20 15:55:31",
+            "finished_at": "2026-01-01/20/26 15:55:31",
+            "logs": [
+                {
+                    "time": "15:55:31",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "15:55:31",
+                    "level": "ERROR",
+                    "message": "Erro inesperado: name 'total_stpes' is not defined"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_15-56-04",
+            "status": "STOPPED",
+            "started_at": "2026-01-20 15:56:04",
+            "finished_at": "2026-01-01/20/26 15:56:08",
+            "logs": [
+                {
+                    "time": "15:56:05",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "15:56:05",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "15:56:06",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "15:56:07",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "15:56:07",
+                    "level": "INFO",
+                    "message": "Solicitação de parada recebida"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_16-20-25",
+            "status": "ERROR",
+            "started_at": "2026-01-20 16:20:25",
+            "finished_at": "2026-01-01/20/26 16:20:25",
+            "logs": [
+                {
+                    "time": "16:20:25",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "16:20:25",
+                    "level": "ERROR",
+                    "message": "Erro inesperado: name 'total_stpes' is not defined"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_16-28-45",
+            "status": "ERROR",
+            "started_at": "2026-01-20 16:28:45",
+            "finished_at": "2026-01-01/20/26 16:28:45",
+            "logs": [
+                {
+                    "time": "16:28:45",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "16:28:45",
+                    "level": "ERROR",
+                    "message": "Erro inesperado: name 'total_stpes' is not defined"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_16-29-47",
+            "status": "ERROR",
+            "started_at": "2026-01-20 16:29:47",
+            "finished_at": "2026-01-01/20/26 16:29:47",
+            "logs": [
+                {
+                    "time": "16:29:47",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "16:29:47",
+                    "level": "ERROR",
+                    "message": "Erro inesperado: name 'total_stpes' is not defined"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_16-38-33",
+            "status": "ERROR",
+            "started_at": "2026-01-20 16:38:33",
+            "finished_at": "2026-01-01/20/26 16:38:33",
+            "logs": [
+                {
+                    "time": "16:38:33",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "16:38:33",
+                    "level": "ERROR",
+                    "message": "Erro inesperado: name 'total_stpes' is not defined"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_16-41-35",
+            "status": "ERROR",
+            "started_at": "2026-01-20 16:41:35",
+            "finished_at": "2026-01-01/20/26 16:41:35",
+            "logs": [
+                {
+                    "time": "16:41:35",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "16:41:35",
+                    "level": "ERROR",
+                    "message": "Erro inesperado: name 'total_steps' is not defined"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_16-48-49",
+            "status": "FINISHED",
+            "started_at": "2026-01-20 16:48:49",
+            "finished_at": "2026-01-01/20/26 16:48:53",
+            "logs": [
+                {
+                    "time": "16:48:49",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "16:48:49",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "16:48:50",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "16:48:51",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "16:48:52",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "16:48:53",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_16-49-01",
+            "status": "STOPPED",
+            "started_at": "2026-01-20 16:49:01",
+            "finished_at": "2026-01-01/20/26 16:49:02",
+            "logs": [
+                {
+                    "time": "16:49:01",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "16:49:01",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "16:49:02",
+                    "level": "INFO",
+                    "message": "Solicitação de parada recebida"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_16-49-07",
+            "status": "FINISHED",
+            "started_at": "2026-01-20 16:49:07",
+            "finished_at": "2026-01-01/20/26 16:49:11",
+            "logs": [
+                {
+                    "time": "16:49:07",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "16:49:07",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "16:49:08",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "16:49:09",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "16:49:10",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "16:49:11",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_16-49-14",
+            "status": "FINISHED",
+            "started_at": "2026-01-20 16:49:14",
+            "finished_at": "2026-01-01/20/26 16:49:19",
+            "logs": [
+                {
+                    "time": "16:49:14",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "16:49:14",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "16:49:15",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "16:49:17",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "16:49:18",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "16:49:19",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_16-53-33",
+            "status": "FINISHED",
+            "started_at": "2026-01-20 16:53:33",
+            "finished_at": "2026-01-01/20/26 16:53:37",
+            "logs": [
+                {
+                    "time": "16:53:33",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "16:53:33",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "16:53:34",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "16:53:35",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "16:53:36",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "16:53:37",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_17-10-31",
+            "status": "FINISHED",
+            "started_at": "2026-01-20 17:10:31",
+            "finished_at": "2026-01-01/20/26 17:10:36",
+            "logs": [
+                {
+                    "time": "17:10:31",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "17:10:31",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "17:10:32",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "17:10:34",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "17:10:35",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "17:10:36",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_17-13-50",
+            "status": "FINISHED",
+            "started_at": "2026-01-20 17:13:50",
+            "finished_at": "2026-01-01/20/26 17:13:54",
+            "logs": [
+                {
+                    "time": "17:13:50",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "17:13:50",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "17:13:51",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "17:13:52",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "17:13:53",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "17:13:54",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
         }
     ]
 }
