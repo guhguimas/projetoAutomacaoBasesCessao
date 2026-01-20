@@ -2004,6 +2004,158 @@
                     "message": "Processamento finalizado com sucesso"
                 }
             ]
+        },
+        {
+            "execution_id": "2026-01-20_17-21-16",
+            "status": "FINISHED",
+            "started_at": "2026-01-20 17:21:16",
+            "finished_at": "2026-01-01/20/26 17:21:20",
+            "logs": [
+                {
+                    "time": "17:21:16",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "17:21:16",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "17:21:17",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "17:21:18",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "17:21:19",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "17:21:20",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_17-21-37",
+            "status": "FINISHED",
+            "started_at": "2026-01-20 17:21:37",
+            "finished_at": "2026-01-01/20/26 17:21:41",
+            "logs": [
+                {
+                    "time": "17:21:37",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "17:21:37",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "17:21:38",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "17:21:39",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "17:21:40",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "17:21:41",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_17-25-23",
+            "status": "FINISHED",
+            "started_at": "2026-01-20 17:25:23",
+            "finished_at": "2026-01-01/20/26 17:25:27",
+            "logs": [
+                {
+                    "time": "17:25:23",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "17:25:23",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "17:25:24",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "17:25:25",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "17:25:26",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "17:25:27",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_17-25-41",
+            "status": "FINISHED",
+            "started_at": "2026-01-20 17:25:41",
+            "finished_at": "2026-01-01/20/26 17:25:45",
+            "logs": [
+                {
+                    "time": "17:25:41",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "17:25:41",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "17:25:42",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "17:25:43",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "17:25:44",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "17:25:45",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
         }
     ]
 }

@@ -43,7 +43,7 @@ class MainWindow:
 
         self.btn_start = tk.Button(
             self.button_frame,
-            text="Start",
+            text="INICIAR",
             width=12,
             command=self._on_start
         )
@@ -51,7 +51,7 @@ class MainWindow:
 
         self.btn_stop = tk.Button(
             self.button_frame,
-            text="Stop",
+            text="PARAR",
             width=12,
             state=tk.DISABLED,
             command=self._on_stop
@@ -159,7 +159,7 @@ class MainWindow:
                 return
 
         self.robot.start()
-        self.logger.log("Botão START acionado", "INFO")
+        self.logger.log("Botão INICIAR acionado", "INFO")
 
         self._clear_logs()
             
@@ -167,7 +167,7 @@ class MainWindow:
         if self.robot:
             self.robot.stop()
         self.root.after(0, self._reset_ui)
-        self.logger.log("Botão STOP acionado", "INFO")
+        self.logger.log("Botão PARAR acionado", "INFO")
 
         self._reset_ui()
     
