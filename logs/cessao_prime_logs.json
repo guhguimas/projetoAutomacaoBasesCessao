@@ -967,6 +967,549 @@
                     "message": "Solicitação de parada recebida"
                 }
             ]
+        },
+        {
+            "execution_id": "2026-01-20_10-36-11",
+            "status": "FINISHED",
+            "started_at": "2026-01-20 10:36:11",
+            "finished_at": "2026-01-01/20/26 10:36:15",
+            "logs": [
+                {
+                    "time": "10:36:11",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "10:36:11",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "10:36:12",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "10:36:13",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "10:36:14",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "10:36:15",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_10-36-18",
+            "status": "STOPPED",
+            "started_at": "2026-01-20 10:36:18",
+            "finished_at": "2026-01-01/20/26 10:36:19",
+            "logs": [
+                {
+                    "time": "10:36:18",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "10:36:18",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "10:36:18",
+                    "level": "INFO",
+                    "message": "Solicitação de parada recebida"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_10-43-59",
+            "status": "STOPPED",
+            "started_at": "2026-01-20 10:43:59",
+            "finished_at": "2026-01-01/20/26 10:44:02",
+            "logs": [
+                {
+                    "time": "10:43:59",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "10:43:59",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "10:44:00",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "10:44:01",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "10:44:02",
+                    "level": "INFO",
+                    "message": "Solicitação de parada recebida"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_11-00-03",
+            "status": "FINISHED",
+            "started_at": "2026-01-20 11:00:03",
+            "finished_at": "2026-01-01/20/26 11:00:08",
+            "logs": [
+                {
+                    "time": "11:00:03",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "11:00:03",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "11:00:05",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "11:00:06",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "11:00:07",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "11:00:08",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_11-08-50",
+            "status": "STOPPED",
+            "started_at": "2026-01-20 11:08:50",
+            "finished_at": "2026-01-01/20/26 11:08:54",
+            "logs": [
+                {
+                    "time": "11:08:50",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "11:08:50",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "11:08:51",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "11:08:52",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "11:08:53",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "11:08:53",
+                    "level": "INFO",
+                    "message": "Solicitação de parada recebida"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_11-09-13",
+            "status": "STOPPED",
+            "started_at": "2026-01-20 11:09:13",
+            "finished_at": "2026-01-01/20/26 11:09:15",
+            "logs": [
+                {
+                    "time": "11:09:13",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "11:09:13",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "11:09:14",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "11:09:14",
+                    "level": "INFO",
+                    "message": "Solicitação de parada recebida"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_11-09-21",
+            "status": "FINISHED",
+            "started_at": "2026-01-20 11:09:21",
+            "finished_at": "2026-01-01/20/26 11:09:25",
+            "logs": [
+                {
+                    "time": "11:09:21",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "11:09:21",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "11:09:22",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "11:09:23",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "11:09:24",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "11:09:25",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_11-18-43",
+            "status": "STOPPED",
+            "started_at": "2026-01-20 11:18:43",
+            "finished_at": "2026-01-01/20/26 11:18:46",
+            "logs": [
+                {
+                    "time": "11:18:43",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "11:18:43",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "11:18:44",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "11:18:45",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "11:18:46",
+                    "level": "INFO",
+                    "message": "Solicitação de parada recebida"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_11-21-03",
+            "status": "STOPPED",
+            "started_at": "2026-01-20 11:21:03",
+            "finished_at": "2026-01-01/20/26 11:21:05",
+            "logs": [
+                {
+                    "time": "11:21:03",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "11:21:03",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "11:21:04",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "11:21:04",
+                    "level": "INFO",
+                    "message": "Solicitação de parada recebida"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_12-01-22",
+            "status": "FINISHED",
+            "started_at": "2026-01-20 12:01:22",
+            "finished_at": "2026-01-01/20/26 12:01:27",
+            "logs": [
+                {
+                    "time": "12:01:22",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "12:01:22",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "12:01:23",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "12:01:24",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "12:01:25",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "12:01:26",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_12-01-41",
+            "status": "STOPPED",
+            "started_at": "2026-01-20 12:01:41",
+            "finished_at": "2026-01-01/20/26 12:01:44",
+            "logs": [
+                {
+                    "time": "12:01:41",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "12:01:41",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "12:01:42",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "12:01:43",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "12:01:43",
+                    "level": "INFO",
+                    "message": "Solicitação de parada recebida"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_12-30-22",
+            "status": "FINISHED",
+            "started_at": "2026-01-20 12:30:22",
+            "finished_at": "2026-01-01/20/26 12:30:26",
+            "logs": [
+                {
+                    "time": "12:30:22",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "12:30:22",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "12:30:23",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "12:30:24",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "12:30:25",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "12:30:26",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_12-30-44",
+            "status": "STOPPED",
+            "started_at": "2026-01-20 12:30:44",
+            "finished_at": "2026-01-01/20/26 12:30:47",
+            "logs": [
+                {
+                    "time": "12:30:44",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "12:30:44",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "12:30:45",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "12:30:46",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "12:30:47",
+                    "level": "INFO",
+                    "message": "Solicitação de parada recebida"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_12-31-00",
+            "status": "STOPPED",
+            "started_at": "2026-01-20 12:31:00",
+            "finished_at": "2026-01-01/20/26 12:31:03",
+            "logs": [
+                {
+                    "time": "12:31:00",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "12:31:00",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "12:31:01",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "12:31:02",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "12:31:03",
+                    "level": "INFO",
+                    "message": "Solicitação de parada recebida"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_12-31-11",
+            "status": "FINISHED",
+            "started_at": "2026-01-20 12:31:11",
+            "finished_at": "2026-01-01/20/26 12:31:15",
+            "logs": [
+                {
+                    "time": "12:31:11",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "12:31:11",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "12:31:12",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "12:31:13",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "12:31:14",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "12:31:15",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-20_12-31-22",
+            "status": "STOPPED",
+            "started_at": "2026-01-20 12:31:22",
+            "finished_at": "2026-01-01/20/26 12:31:25",
+            "logs": [
+                {
+                    "time": "12:31:22",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "12:31:22",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "12:31:23",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "12:31:24",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "12:31:24",
+                    "level": "INFO",
+                    "message": "Solicitação de parada recebida"
+                }
+            ]
         }
     ]
 }
