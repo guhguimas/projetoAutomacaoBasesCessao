@@ -1,9 +1,11 @@
 import threading
 import time
+import traceback
 from datetime import datetime
 from enum import Enum
 from logs.log_manager import LogManager
 from uuid import uuid4
+from app.core.data_loader import DataLoader, DataLoaderError
 
 class RobotStatus(Enum):
     IDLE = "idle"
@@ -14,7 +16,7 @@ class RobotStatus(Enum):
 
 
 class RobotController:
-    def __init__(self, log_callback=None, status_callback=None, finish_callback=None, progress_callback=None):
+    def __init__(self, log_callback=None, status_callback=None, finish_callback=None, progress_callback=None, file_manager=None):
         self.status = RobotStatus.IDLE
         self._stop_event = threading.Event()
         self.log = log_callback
@@ -28,6 +30,12 @@ class RobotController:
         self.execution_id = None
 
         self.progress_callback = progress_callback
+
+        self.file_manager = file_manager
+        
+        self.loader = DataLoader(csv_encoding="utf-8", csv_sep=";")
+        
+        self.dataframes = {}
 
     def _log(self, message, level="INFO"):
         timestamp = datetime.now().strftime("%H:%M:%S")
@@ -97,6 +105,10 @@ class RobotController:
             self._set_status(RobotStatus.ERROR)
             self._log(f"Erro inesperado: {e}", "ERROR")
 
+            tb = traceback.format_exc()
+            self._log("Erro inesperado (traceback completo):", "ERROR")
+            self._log(tb, "ERROR")
+
         finally:
             if self.status == RobotStatus.STOPPED:
                 self.log_manager.finish_execution(self.execution_id, "STOPPED")
@@ -114,11 +126,28 @@ class RobotController:
             self.status_callback(status)
 
     def _step_load_files(self):
-        self._log("Etapa 1: Carregando arquivos")
-        time.sleep(1)
+        if not self.file_manager:
+            raise DataLoaderError(f"FileManager não foi informado no robô.")
+        
+        missing = self.file_manager.get_missing_files()
+        if missing:
+            self._log(f"Arquivos ausentes: {', '.join(missing)}", "WARNING")
+        else:
+            self._log("Todos os arquivos foram selecionados.", "SUCCESS")
 
-        if self._stop_event.is_set():
-            return
+        for key, path in self.file_manager.files.items():
+            if self._stop_event.is_set():
+                return
+            
+            if not path:
+                return
+
+            self._log(f"Carregando arquivos: {key}", "INFO")
+
+            df = self.loader.load(path)
+            self.dataframes[key] = df
+
+            self._log(f"{key} carregado: {df.shape[0]} linhas, {df.shape[1]} colunas", "SUCCESS")
         
     def _step_process_data(self):
         self._log("Etapa 2: Processando dados")

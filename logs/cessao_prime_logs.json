@@ -2250,6 +2250,1045 @@
                     "message": "Processamento finalizado com sucesso"
                 }
             ]
+        },
+        {
+            "execution_id": "2026-01-21_14-59-30",
+            "status": "ERROR",
+            "started_at": "2026-01-21 14:59:30",
+            "finished_at": "2026-01-01/21/26 14:59:31",
+            "logs": [
+                {
+                    "time": "14:59:30",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "14:59:30",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "14:59:31",
+                    "level": "ERROR",
+                    "message": "Erro inesperado: 'FileManager' object has no attribute 'get_minissing_files'"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-21_15-00-00",
+            "status": "ERROR",
+            "started_at": "2026-01-21 15:00:00",
+            "finished_at": "2026-01-01/21/26 15:00:01",
+            "logs": [
+                {
+                    "time": "15:00:00",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "15:00:00",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "15:00:01",
+                    "level": "ERROR",
+                    "message": "Erro inesperado: 'FileManager' object has no attribute 'get_minissing_files'"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-21_15-00-48",
+            "status": "ERROR",
+            "started_at": "2026-01-21 15:00:48",
+            "finished_at": "2026-01-01/21/26 15:00:49",
+            "logs": [
+                {
+                    "time": "15:00:48",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "15:00:48",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "15:00:49",
+                    "level": "ERROR",
+                    "message": "Erro inesperado: 'FileManager' object has no attribute 'get_minissing_files'"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-21_15-02-42",
+            "status": "ERROR",
+            "started_at": "2026-01-21 15:02:42",
+            "finished_at": "2026-01-01/21/26 15:02:43",
+            "logs": [
+                {
+                    "time": "15:02:42",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "15:02:42",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "15:02:43",
+                    "level": "ERROR",
+                    "message": "Erro inesperado: 'FileManager' object has no attribute 'get_minissing_files'"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-21_15-23-43",
+            "status": "ERROR",
+            "started_at": "2026-01-21 15:23:43",
+            "finished_at": "2026-01-01/21/26 15:23:44",
+            "logs": [
+                {
+                    "time": "15:23:43",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "15:23:43",
+                    "level": "INFO",
+                    "message": "DEBUG: entrou no _run()"
+                },
+                {
+                    "time": "15:23:43",
+                    "level": "INFO",
+                    "message": "DEBUG file_manager is None? FalseINFO"
+                },
+                {
+                    "time": "15:23:43",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "15:23:44",
+                    "level": "ERROR",
+                    "message": "Erro inesperado: 'FileManager' object has no attribute 'get_minissing_files'"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-21_15-24-14",
+            "status": "ERROR",
+            "started_at": "2026-01-21 15:24:14",
+            "finished_at": "2026-01-01/21/26 15:24:15",
+            "logs": [
+                {
+                    "time": "15:24:14",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "15:24:14",
+                    "level": "INFO",
+                    "message": "DEBUG: entrou no _run()"
+                },
+                {
+                    "time": "15:24:14",
+                    "level": "INFO",
+                    "message": "DEBUG file_manager is None? FalseINFO"
+                },
+                {
+                    "time": "15:24:14",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "15:24:15",
+                    "level": "ERROR",
+                    "message": "Erro inesperado: 'FileManager' object has no attribute 'get_minissing_files'"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-21_15-25-15",
+            "status": "ERROR",
+            "started_at": "2026-01-21 15:25:15",
+            "finished_at": "2026-01-01/21/26 15:25:16",
+            "logs": [
+                {
+                    "time": "15:25:15",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "15:25:15",
+                    "level": "INFO",
+                    "message": "DEBUG file_manager is None? FalseINFO"
+                },
+                {
+                    "time": "15:25:15",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "15:25:16",
+                    "level": "ERROR",
+                    "message": "Erro inesperado: 'FileManager' object has no attribute 'get_minissing_files'"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-21_15-26-21",
+            "status": "ERROR",
+            "started_at": "2026-01-21 15:26:21",
+            "finished_at": "2026-01-01/21/26 15:26:22",
+            "logs": [
+                {
+                    "time": "15:26:21",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "15:26:21",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "15:26:22",
+                    "level": "ERROR",
+                    "message": "Erro inesperado: 'FileManager' object has no attribute 'get_minissing_files'"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-21_15-26-29",
+            "status": "ERROR",
+            "started_at": "2026-01-21 15:26:29",
+            "finished_at": "2026-01-01/21/26 15:26:31",
+            "logs": [
+                {
+                    "time": "15:26:29",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "15:26:29",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "15:26:31",
+                    "level": "ERROR",
+                    "message": "Erro inesperado: 'FileManager' object has no attribute 'get_minissing_files'"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-21_15-52-23",
+            "status": "ERROR",
+            "started_at": "2026-01-21 15:52:23",
+            "finished_at": "2026-01-01/21/26 15:52:24",
+            "logs": [
+                {
+                    "time": "15:52:23",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "15:52:23",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "15:52:24",
+                    "level": "ERROR",
+                    "message": "Erro inesperado: 'FileManager' object has no attribute 'get_minissing_files'"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-21_16-03-18",
+            "status": "ERROR",
+            "started_at": "2026-01-21 16:03:18",
+            "finished_at": "2026-01-01/21/26 16:03:19",
+            "logs": [
+                {
+                    "time": "16:03:18",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "16:03:18",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "16:03:19",
+                    "level": "ERROR",
+                    "message": "Erro inesperado: 'FileManager' object has no attribute 'get_minissing_files'"
+                },
+                {
+                    "time": "16:03:19",
+                    "level": "ERROR",
+                    "message": "Erro inesperado (traceback completo):"
+                },
+                {
+                    "time": "16:03:19",
+                    "level": "ERROR",
+                    "message": "Traceback (most recent call last):\n  File \"D:\\#DESENVOLVIMENTOS\\#projeto_cessao\\app\\controller\\robot_controller.py\", line 78, in _run\n    self._step_load_files()\n  File \"D:\\#DESENVOLVIMENTOS\\#projeto_cessao\\app\\controller\\robot_controller.py\", line 130, in _step_load_files\n    missing = self.file_manager.get_minissing_files() if self.file_manager else []\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'FileManager' object has no attribute 'get_minissing_files'. Did you mean: 'get_missing_files'?\n"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-21_16-03-49",
+            "status": "ERROR",
+            "started_at": "2026-01-21 16:03:49",
+            "finished_at": "2026-01-01/21/26 16:03:50",
+            "logs": [
+                {
+                    "time": "16:03:49",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "16:03:49",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "16:03:50",
+                    "level": "ERROR",
+                    "message": "Erro inesperado: 'FileManager' object has no attribute 'get_minissing_files'"
+                },
+                {
+                    "time": "16:03:50",
+                    "level": "ERROR",
+                    "message": "Erro inesperado (traceback completo):"
+                },
+                {
+                    "time": "16:03:50",
+                    "level": "ERROR",
+                    "message": "Traceback (most recent call last):\n  File \"D:\\#DESENVOLVIMENTOS\\#projeto_cessao\\app\\controller\\robot_controller.py\", line 78, in _run\n    self._step_load_files()\n  File \"D:\\#DESENVOLVIMENTOS\\#projeto_cessao\\app\\controller\\robot_controller.py\", line 130, in _step_load_files\n    missing = self.file_manager.get_missing_files() if self.file_manager else []\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'FileManager' object has no attribute 'get_minissing_files'. Did you mean: 'get_missing_files'?\n"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-21_16-04-04",
+            "status": "FINISHED",
+            "started_at": "2026-01-21 16:04:04",
+            "finished_at": "2026-01-01/21/26 16:04:08",
+            "logs": [
+                {
+                    "time": "16:04:04",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "16:04:04",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "16:04:05",
+                    "level": "WARNING",
+                    "message": "Arquivos ausentes: frontAkrk, frontDig, credAkrk, credDig, averbadosAkrk, averbadosDig, integradosFunc, esteirasFunc"
+                },
+                {
+                    "time": "16:04:05",
+                    "level": "INFO",
+                    "message": "cessao: U:/_ TECK/1. CESSOES/2. CESSOES/_ 01.2026/21.01/BASE PIRACICABA SEMAE PORTAL 21.01.xlsx"
+                },
+                {
+                    "time": "16:04:05",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "16:04:06",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "16:04:07",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "16:04:08",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-21_16-05-01",
+            "status": "FINISHED",
+            "started_at": "2026-01-21 16:05:01",
+            "finished_at": "2026-01-01/21/26 16:05:05",
+            "logs": [
+                {
+                    "time": "16:05:01",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "16:05:01",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "16:05:02",
+                    "level": "WARNING",
+                    "message": "Arquivos ausentes: frontAkrk, frontDig, credAkrk, credDig, averbadosAkrk, averbadosDig, integradosFunc, esteirasFunc"
+                },
+                {
+                    "time": "16:05:02",
+                    "level": "INFO",
+                    "message": "cessao: U:/_ TECK/1. CESSOES/2. CESSOES/_ 01.2026/21.01/BASE CRM DIG 21.01.csv"
+                },
+                {
+                    "time": "16:05:02",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "16:05:03",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "16:05:04",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "16:05:05",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-21_16-05-21",
+            "status": "STOPPED",
+            "started_at": "2026-01-21 16:05:21",
+            "finished_at": "2026-01-01/21/26 16:05:24",
+            "logs": [
+                {
+                    "time": "16:05:21",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "16:05:21",
+                    "level": "INFO",
+                    "message": "Etapa 1: Carregando arquivos"
+                },
+                {
+                    "time": "16:05:22",
+                    "level": "WARNING",
+                    "message": "Arquivos ausentes: frontAkrk, frontDig, credAkrk, credDig, averbadosAkrk, averbadosDig, integradosFunc, esteirasFunc"
+                },
+                {
+                    "time": "16:05:22",
+                    "level": "INFO",
+                    "message": "cessao: U:/_ TECK/1. CESSOES/2. CESSOES/_ 01.2026/21.01/CESSAO AKRK_DIG CRED_FUNC 21.01.csv"
+                },
+                {
+                    "time": "16:05:23",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "16:05:23",
+                    "level": "INFO",
+                    "message": "Solicitação de parada recebida"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-21_17-06-56",
+            "status": "FINISHED",
+            "started_at": "2026-01-21 17:06:56",
+            "finished_at": "2026-01-01/21/26 17:07:10",
+            "logs": [
+                {
+                    "time": "17:06:56",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "17:06:56",
+                    "level": "WARNING",
+                    "message": "Arquivos ausentes: frontAkrk, frontDig, credAkrk, credDig, averbadosAkrk, averbadosDig, integradosFunc, esteirasFunc"
+                },
+                {
+                    "time": "17:06:56",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: cessao"
+                },
+                {
+                    "time": "17:07:07",
+                    "level": "SUCCESS",
+                    "message": "cessao carregado: 73381 linhas, 26 colunas"
+                },
+                {
+                    "time": "17:07:07",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "17:07:08",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "17:07:09",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "17:07:10",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-21_17-07-25",
+            "status": "FINISHED",
+            "started_at": "2026-01-21 17:07:25",
+            "finished_at": "2026-01-01/21/26 17:07:40",
+            "logs": [
+                {
+                    "time": "17:07:25",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "17:07:25",
+                    "level": "WARNING",
+                    "message": "Arquivos ausentes: frontAkrk, frontDig, credAkrk, credDig, averbadosAkrk, averbadosDig, integradosFunc, esteirasFunc"
+                },
+                {
+                    "time": "17:07:25",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: cessao"
+                },
+                {
+                    "time": "17:07:37",
+                    "level": "SUCCESS",
+                    "message": "cessao carregado: 73381 linhas, 26 colunas"
+                },
+                {
+                    "time": "17:07:37",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "17:07:38",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "17:07:39",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "17:07:40",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-21_17-08-44",
+            "status": "ERROR",
+            "started_at": "2026-01-21 17:08:44",
+            "finished_at": "2026-01-01/21/26 17:09:06",
+            "logs": [
+                {
+                    "time": "17:08:44",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "17:08:44",
+                    "level": "SUCCESS",
+                    "message": "Todos os arquivos foram selecionados."
+                },
+                {
+                    "time": "17:08:44",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: cessao"
+                },
+                {
+                    "time": "17:08:55",
+                    "level": "SUCCESS",
+                    "message": "cessao carregado: 73381 linhas, 26 colunas"
+                },
+                {
+                    "time": "17:08:55",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: frontAkrk"
+                },
+                {
+                    "time": "17:08:59",
+                    "level": "SUCCESS",
+                    "message": "frontAkrk carregado: 596251 linhas, 31 colunas"
+                },
+                {
+                    "time": "17:08:59",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: frontDig"
+                },
+                {
+                    "time": "17:09:06",
+                    "level": "SUCCESS",
+                    "message": "frontDig carregado: 987516 linhas, 31 colunas"
+                },
+                {
+                    "time": "17:09:06",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: credAkrk"
+                },
+                {
+                    "time": "17:09:06",
+                    "level": "ERROR",
+                    "message": "Erro inesperado: Falha ao ler CSV: BASE INICIADOS AKRK 12.01.csv | 'utf-8' codec can't decode byte 0xd3 in position 0: invalid continuation byte"
+                },
+                {
+                    "time": "17:09:06",
+                    "level": "ERROR",
+                    "message": "Erro inesperado (traceback completo):"
+                },
+                {
+                    "time": "17:09:06",
+                    "level": "ERROR",
+                    "message": "Traceback (most recent call last):\n  File \"D:\\#DESENVOLVIMENTOS\\#projeto_cessao\\app\\core\\data_loader.py\", line 30, in _load_csv\n    df = pd.read_csv(\n         ^^^^^^^^^^^^\n  File \"C:\\Users\\gustavo.barbosa\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pandas\\io\\parsers\\readers.py\", line 1026, in read_csv\n    return _read(filepath_or_buffer, kwds)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\gustavo.barbosa\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pandas\\io\\parsers\\readers.py\", line 620, in _read\n    parser = TextFileReader(filepath_or_buffer, **kwds)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\gustavo.barbosa\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pandas\\io\\parsers\\readers.py\", line 1620, in __init__\n    self._engine = self._make_engine(f, self.engine)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\gustavo.barbosa\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pandas\\io\\parsers\\readers.py\", line 1898, in _make_engine\n    return mapping[engine](f, **self.options)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\gustavo.barbosa\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pandas\\io\\parsers\\c_parser_wrapper.py\", line 93, in __init__\n    self._reader = parsers.TextReader(src, **kwds)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"parsers.pyx\", line 574, in pandas._libs.parsers.TextReader.__cinit__\n  File \"parsers.pyx\", line 691, in pandas._libs.parsers.TextReader._get_header\nUnicodeDecodeError: 'utf-8' codec can't decode byte 0xd3 in position 0: invalid continuation byte\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\#DESENVOLVIMENTOS\\#projeto_cessao\\app\\controller\\robot_controller.py\", line 83, in _run\n    self._step_load_files()\n  File \"D:\\#DESENVOLVIMENTOS\\#projeto_cessao\\app\\controller\\robot_controller.py\", line 147, in _step_load_files\n    df = self.loader.load(path)\n         ^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\#DESENVOLVIMENTOS\\#projeto_cessao\\app\\core\\data_loader.py\", line 24, in load\n    return self._load_csv(path)\n           ^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\#DESENVOLVIMENTOS\\#projeto_cessao\\app\\core\\data_loader.py\", line 39, in _load_csv\n    raise DataLoaderError(f\"Falha ao ler CSV: {os.path.basename(path)} | {e}\") from e\napp.core.data_loader.DataLoaderError: Falha ao ler CSV: BASE INICIADOS AKRK 12.01.csv | 'utf-8' codec can't decode byte 0xd3 in position 0: invalid continuation byte\n"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-21_17-30-32",
+            "status": "FINISHED",
+            "started_at": "2026-01-21 17:30:32",
+            "finished_at": "2026-01-01/21/26 17:34:00",
+            "logs": [
+                {
+                    "time": "17:30:32",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "17:30:32",
+                    "level": "SUCCESS",
+                    "message": "Todos os arquivos foram selecionados."
+                },
+                {
+                    "time": "17:30:32",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: cessao"
+                },
+                {
+                    "time": "17:30:43",
+                    "level": "SUCCESS",
+                    "message": "cessao carregado: 73381 linhas, 26 colunas"
+                },
+                {
+                    "time": "17:30:43",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: frontAkrk"
+                },
+                {
+                    "time": "17:30:47",
+                    "level": "SUCCESS",
+                    "message": "frontAkrk carregado: 596268 linhas, 32 colunas"
+                },
+                {
+                    "time": "17:30:47",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: frontDig"
+                },
+                {
+                    "time": "17:30:54",
+                    "level": "SUCCESS",
+                    "message": "frontDig carregado: 1000739 linhas, 32 colunas"
+                },
+                {
+                    "time": "17:30:54",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: credAkrk"
+                },
+                {
+                    "time": "17:31:09",
+                    "level": "SUCCESS",
+                    "message": "credAkrk carregado: 777142 linhas, 97 colunas"
+                },
+                {
+                    "time": "17:31:09",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: credDig"
+                },
+                {
+                    "time": "17:31:11",
+                    "level": "SUCCESS",
+                    "message": "credDig carregado: 74099 linhas, 97 colunas"
+                },
+                {
+                    "time": "17:31:11",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: averbadosAkrk"
+                },
+                {
+                    "time": "17:31:14",
+                    "level": "SUCCESS",
+                    "message": "averbadosAkrk carregado: 317963 linhas, 27 colunas"
+                },
+                {
+                    "time": "17:31:14",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: averbadosDig"
+                },
+                {
+                    "time": "17:31:14",
+                    "level": "SUCCESS",
+                    "message": "averbadosDig carregado: 37008 linhas, 27 colunas"
+                },
+                {
+                    "time": "17:31:14",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: integradosFunc"
+                },
+                {
+                    "time": "17:31:26",
+                    "level": "SUCCESS",
+                    "message": "integradosFunc carregado: 42026 linhas, 51 colunas"
+                },
+                {
+                    "time": "17:31:26",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: esteirasFunc"
+                },
+                {
+                    "time": "17:33:57",
+                    "level": "SUCCESS",
+                    "message": "esteirasFunc carregado: 277877 linhas, 91 colunas"
+                },
+                {
+                    "time": "17:33:57",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "17:33:58",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "17:33:59",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "17:34:00",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-21_17-37-42",
+            "status": "FINISHED",
+            "started_at": "2026-01-21 17:37:42",
+            "finished_at": "2026-01-01/21/26 17:38:24",
+            "logs": [
+                {
+                    "time": "17:37:43",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "17:37:43",
+                    "level": "WARNING",
+                    "message": "Arquivos ausentes: averbadosAkrk, averbadosDig, esteirasFunc"
+                },
+                {
+                    "time": "17:37:43",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: cessao"
+                },
+                {
+                    "time": "17:37:54",
+                    "level": "SUCCESS",
+                    "message": "cessao carregado: 73381 linhas, 26 colunas"
+                },
+                {
+                    "time": "17:37:54",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: frontAkrk"
+                },
+                {
+                    "time": "17:37:58",
+                    "level": "SUCCESS",
+                    "message": "frontAkrk carregado: 596268 linhas, 32 colunas"
+                },
+                {
+                    "time": "17:37:58",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: frontDig"
+                },
+                {
+                    "time": "17:38:05",
+                    "level": "SUCCESS",
+                    "message": "frontDig carregado: 1000739 linhas, 32 colunas"
+                },
+                {
+                    "time": "17:38:05",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: credAkrk"
+                },
+                {
+                    "time": "17:38:19",
+                    "level": "SUCCESS",
+                    "message": "credAkrk carregado: 777142 linhas, 97 colunas"
+                },
+                {
+                    "time": "17:38:19",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: credDig"
+                },
+                {
+                    "time": "17:38:21",
+                    "level": "SUCCESS",
+                    "message": "credDig carregado: 74099 linhas, 97 colunas"
+                },
+                {
+                    "time": "17:38:21",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "17:38:22",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "17:38:23",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "17:38:24",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-21_17-38-32",
+            "status": "FINISHED",
+            "started_at": "2026-01-21 17:38:32",
+            "finished_at": "2026-01-01/21/26 17:38:35",
+            "logs": [
+                {
+                    "time": "17:38:32",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "17:38:32",
+                    "level": "WARNING",
+                    "message": "Arquivos ausentes: cessao, frontAkrk, frontDig, credAkrk, credDig, averbadosAkrk, averbadosDig, integradosFunc, esteirasFunc"
+                },
+                {
+                    "time": "17:38:32",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "17:38:33",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "17:38:34",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "17:38:35",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-21_17-39-25",
+            "status": "FINISHED",
+            "started_at": "2026-01-21 17:39:25",
+            "finished_at": "2026-01-01/21/26 17:42:52",
+            "logs": [
+                {
+                    "time": "17:39:25",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "17:39:25",
+                    "level": "SUCCESS",
+                    "message": "Todos os arquivos foram selecionados."
+                },
+                {
+                    "time": "17:39:25",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: cessao"
+                },
+                {
+                    "time": "17:39:36",
+                    "level": "SUCCESS",
+                    "message": "cessao carregado: 73381 linhas, 26 colunas"
+                },
+                {
+                    "time": "17:39:36",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: frontAkrk"
+                },
+                {
+                    "time": "17:39:41",
+                    "level": "SUCCESS",
+                    "message": "frontAkrk carregado: 596268 linhas, 32 colunas"
+                },
+                {
+                    "time": "17:39:41",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: frontDig"
+                },
+                {
+                    "time": "17:39:47",
+                    "level": "SUCCESS",
+                    "message": "frontDig carregado: 1000739 linhas, 32 colunas"
+                },
+                {
+                    "time": "17:39:47",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: credAkrk"
+                },
+                {
+                    "time": "17:40:02",
+                    "level": "SUCCESS",
+                    "message": "credAkrk carregado: 777142 linhas, 97 colunas"
+                },
+                {
+                    "time": "17:40:02",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: credDig"
+                },
+                {
+                    "time": "17:40:04",
+                    "level": "SUCCESS",
+                    "message": "credDig carregado: 74099 linhas, 97 colunas"
+                },
+                {
+                    "time": "17:40:04",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: averbadosAkrk"
+                },
+                {
+                    "time": "17:40:07",
+                    "level": "SUCCESS",
+                    "message": "averbadosAkrk carregado: 317963 linhas, 27 colunas"
+                },
+                {
+                    "time": "17:40:07",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: averbadosDig"
+                },
+                {
+                    "time": "17:40:07",
+                    "level": "SUCCESS",
+                    "message": "averbadosDig carregado: 37008 linhas, 27 colunas"
+                },
+                {
+                    "time": "17:40:07",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: integradosFunc"
+                },
+                {
+                    "time": "17:40:19",
+                    "level": "SUCCESS",
+                    "message": "integradosFunc carregado: 42026 linhas, 51 colunas"
+                },
+                {
+                    "time": "17:40:19",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: esteirasFunc"
+                },
+                {
+                    "time": "17:42:49",
+                    "level": "SUCCESS",
+                    "message": "esteirasFunc carregado: 277877 linhas, 91 colunas"
+                },
+                {
+                    "time": "17:42:49",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "17:42:50",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "17:42:51",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "17:42:52",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-21_17-43-09",
+            "status": "FINISHED",
+            "started_at": "2026-01-21 17:43:09",
+            "finished_at": "2026-01-01/21/26 17:43:12",
+            "logs": [
+                {
+                    "time": "17:43:09",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "17:43:09",
+                    "level": "WARNING",
+                    "message": "Arquivos ausentes: cessao, frontAkrk, frontDig, credAkrk, credDig, averbadosAkrk, averbadosDig, integradosFunc, esteirasFunc"
+                },
+                {
+                    "time": "17:43:09",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "17:43:10",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "17:43:11",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "17:43:12",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
         }
     ]
 }

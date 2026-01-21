@@ -33,7 +33,8 @@ class MainWindow:
             log_callback=self._safe_log,
             status_callback=self._on_robot_status_change,
             finish_callback=self._on_robot_finish,
-            progress_callback=self._safe_progress
+            progress_callback=self._safe_progress,
+            file_manager=self.file_manager
             )
     
     def _build_layout(self):
@@ -180,7 +181,11 @@ class MainWindow:
         self.root.after(0, self._update_buttons_state) 
 
     def _on_robot_finish(self):
-        self.root.after(0, self._reset_progress)
+        self.root.after(0, self._update_buttons_after_finish)
+        
+        if self.robot.status == RobotStatus.ERROR:
+            return
+        
         self.root.after(0, self._reset_ui)
 
     def _safe_log(self, message, level="INFO"):
