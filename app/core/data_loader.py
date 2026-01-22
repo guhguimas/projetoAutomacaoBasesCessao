@@ -7,7 +7,8 @@ class DataLoaderError(Exception):
     pass
 
 class DataLoader:
-    def __init__(self, csv_encoding="utf-8", csv_sep=";"):
+    def __init__(self, csv_encoding="utf-8", csv_sep=";", log_callback=None):
+        self.log_callback = log_callback
         self.csv_encoding = csv_encoding
         self.csv_sep = csv_sep
 
@@ -30,6 +31,8 @@ class DataLoader:
 
         last_error = None
 
+        self._log(f"Lendo arquivo CSV: {os.path.basename(path)}", "INFO")
+
         for enc in encodings_to_try:
             try:
                 df = pd.read_csv(
@@ -39,8 +42,10 @@ class DataLoader:
                     dtype=str,
                     keep_default_na=False
                 )
+                self._log(f"Arquivo carregado com sucesso: {os.path.basename(path)} | Linhas: {len(df)}", "SUCCESS")
                 return df
             except UnicodeDecodeError as e:
+                self._log(f"Falhou ao ler {os.path.basename(path)} com encoding={enc}. Tentando próximo...", "WARNING")
                 last_error = e
                 continue
             except Exception as e:
@@ -49,12 +54,19 @@ class DataLoader:
 
     def _load_excel(self, path: str) -> pd.DataFrame:
         try:
+            self._log(f"Lendo arquivo Excel: {os.path.basename(path)}", "INFO")
+            
             df = pd.read_excel(
                 path,
                 dtype=str,
                 engine="openpyxl"
             )
+            self._log(f"Arquivo carregado com sucesso: {os.path.basename(path)} | Linhas: {len(df)}", "SUCCESS")
             df = df.fillna("")
             return df
         except Exception as e:
             raise DataLoaderError(f"Fala ao ler Excel: {os.path.basename(path)} | {e}") from e
+
+    def _log(self, message, level="INFO"):
+        if self.log_callback:
+            self.log_callback(message, level)

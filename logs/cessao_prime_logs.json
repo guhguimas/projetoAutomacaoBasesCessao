@@ -3289,6 +3289,1292 @@
                     "message": "Processamento finalizado com sucesso"
                 }
             ]
+        },
+        {
+            "execution_id": "2026-01-22_09-59-04",
+            "status": "FINISHED",
+            "started_at": "2026-01-22 09:59:04",
+            "finished_at": "2026-01-01/22/26 10:02:26",
+            "logs": [
+                {
+                    "time": "09:59:04",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "09:59:04",
+                    "level": "SUCCESS",
+                    "message": "Todos os arquivos foram selecionados."
+                },
+                {
+                    "time": "09:59:04",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: cessao"
+                },
+                {
+                    "time": "09:59:04",
+                    "level": "INFO",
+                    "message": "Lendo arquivo Excel: CONTROLE_PLANILHA_CESSÃO 2025 - VINI AKRK+DIG 21.01.xlsx"
+                },
+                {
+                    "time": "09:59:15",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: CONTROLE_PLANILHA_CESSÃO 2025 - VINI AKRK+DIG 21.01.xlsx | Linhas: 73381"
+                },
+                {
+                    "time": "09:59:15",
+                    "level": "SUCCESS",
+                    "message": "cessao carregado: 73381 linhas, 26 colunas"
+                },
+                {
+                    "time": "09:59:15",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: frontAkrk"
+                },
+                {
+                    "time": "09:59:15",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE CRM AKRK 12.01.csv"
+                },
+                {
+                    "time": "09:59:20",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: BASE CRM AKRK 12.01.csv | Linhas: 596251"
+                },
+                {
+                    "time": "09:59:20",
+                    "level": "SUCCESS",
+                    "message": "frontAkrk carregado: 596251 linhas, 31 colunas"
+                },
+                {
+                    "time": "09:59:20",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: frontDig"
+                },
+                {
+                    "time": "09:59:20",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE CRM DIG 12.01.csv"
+                },
+                {
+                    "time": "09:59:26",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: BASE CRM DIG 12.01.csv | Linhas: 987516"
+                },
+                {
+                    "time": "09:59:26",
+                    "level": "SUCCESS",
+                    "message": "frontDig carregado: 987516 linhas, 31 colunas"
+                },
+                {
+                    "time": "09:59:26",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: credAkrk"
+                },
+                {
+                    "time": "09:59:26",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE INICIADOS AKRK 12.01.csv"
+                },
+                {
+                    "time": "09:59:26",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE INICIADOS AKRK 12.01.csv"
+                },
+                {
+                    "time": "09:59:26",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE INICIADOS AKRK 12.01.csv"
+                },
+                {
+                    "time": "09:59:26",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE INICIADOS AKRK 12.01.csv"
+                },
+                {
+                    "time": "09:59:39",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: BASE INICIADOS AKRK 12.01.csv | Linhas: 777142"
+                },
+                {
+                    "time": "09:59:39",
+                    "level": "SUCCESS",
+                    "message": "credAkrk carregado: 777142 linhas, 97 colunas"
+                },
+                {
+                    "time": "09:59:39",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: credDig"
+                },
+                {
+                    "time": "09:59:39",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE INICIADOS DIG 12.01.csv"
+                },
+                {
+                    "time": "09:59:39",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE INICIADOS DIG 12.01.csv"
+                },
+                {
+                    "time": "09:59:39",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE INICIADOS DIG 12.01.csv"
+                },
+                {
+                    "time": "09:59:40",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE INICIADOS DIG 12.01.csv"
+                },
+                {
+                    "time": "09:59:41",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: BASE INICIADOS DIG 12.01.csv | Linhas: 74099"
+                },
+                {
+                    "time": "09:59:41",
+                    "level": "SUCCESS",
+                    "message": "credDig carregado: 74099 linhas, 97 colunas"
+                },
+                {
+                    "time": "09:59:41",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: averbadosAkrk"
+                },
+                {
+                    "time": "09:59:41",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE AVERBADOS AKRK 12.01.csv"
+                },
+                {
+                    "time": "09:59:41",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE AVERBADOS AKRK 12.01.csv"
+                },
+                {
+                    "time": "09:59:41",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE AVERBADOS AKRK 12.01.csv"
+                },
+                {
+                    "time": "09:59:42",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE AVERBADOS AKRK 12.01.csv"
+                },
+                {
+                    "time": "09:59:44",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: BASE AVERBADOS AKRK 12.01.csv | Linhas: 317963"
+                },
+                {
+                    "time": "09:59:44",
+                    "level": "SUCCESS",
+                    "message": "averbadosAkrk carregado: 317963 linhas, 27 colunas"
+                },
+                {
+                    "time": "09:59:44",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: averbadosDig"
+                },
+                {
+                    "time": "09:59:44",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE AVERBADOS DIG 12.01.csv"
+                },
+                {
+                    "time": "09:59:44",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE AVERBADOS DIG 12.01.csv"
+                },
+                {
+                    "time": "09:59:44",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE AVERBADOS DIG 12.01.csv"
+                },
+                {
+                    "time": "09:59:44",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE AVERBADOS DIG 12.01.csv"
+                },
+                {
+                    "time": "09:59:45",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: BASE AVERBADOS DIG 12.01.csv | Linhas: 37008"
+                },
+                {
+                    "time": "09:59:45",
+                    "level": "SUCCESS",
+                    "message": "averbadosDig carregado: 37008 linhas, 27 colunas"
+                },
+                {
+                    "time": "09:59:45",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: integradosFunc"
+                },
+                {
+                    "time": "09:59:45",
+                    "level": "INFO",
+                    "message": "Lendo arquivo Excel: OPERACOES REALIZADAS (COMPLETO) 2026.xlsx"
+                },
+                {
+                    "time": "09:59:56",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: OPERACOES REALIZADAS (COMPLETO) 2026.xlsx | Linhas: 42026"
+                },
+                {
+                    "time": "09:59:56",
+                    "level": "SUCCESS",
+                    "message": "integradosFunc carregado: 42026 linhas, 51 colunas"
+                },
+                {
+                    "time": "09:59:56",
+                    "level": "INFO",
+                    "message": "Carregando arquivos: esteirasFunc"
+                },
+                {
+                    "time": "09:59:56",
+                    "level": "INFO",
+                    "message": "Lendo arquivo Excel: RLE2026.xlsx"
+                },
+                {
+                    "time": "10:02:21",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: RLE2026.xlsx | Linhas: 277877"
+                },
+                {
+                    "time": "10:02:23",
+                    "level": "SUCCESS",
+                    "message": "esteirasFunc carregado: 277877 linhas, 91 colunas"
+                },
+                {
+                    "time": "10:02:23",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "10:02:24",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "10:02:25",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "10:02:26",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-22_17-36-57",
+            "status": "ERROR",
+            "started_at": "2026-01-22 17:36:57",
+            "finished_at": "2026-01-01/22/26 17:36:57",
+            "logs": [
+                {
+                    "time": "17:36:57",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "17:36:57",
+                    "level": "SUCCESS",
+                    "message": "Todos os arquivos foram selecionados."
+                },
+                {
+                    "time": "17:36:57",
+                    "level": "ERROR",
+                    "message": "Erro inesperado: 'list' object is not callable"
+                },
+                {
+                    "time": "17:36:57",
+                    "level": "ERROR",
+                    "message": "Erro inesperado (traceback completo):"
+                },
+                {
+                    "time": "17:36:57",
+                    "level": "ERROR",
+                    "message": "Traceback (most recent call last):\n  File \"D:\\#DESENVOLVIMENTOS\\#projeto_cessao\\app\\controller\\robot_controller.py\", line 85, in _run\n    self._step_load_files()\n  File \"D:\\#DESENVOLVIMENTOS\\#projeto_cessao\\app\\controller\\robot_controller.py\", line 140, in _step_load_files\n    for key, label, required in FILE_PLAN():\n                                ^^^^^^^^^^^\nTypeError: 'list' object is not callable\n"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-22_17-41-32",
+            "status": "FINISHED",
+            "started_at": "2026-01-22 17:41:32",
+            "finished_at": "2026-01-01/22/26 17:41:47",
+            "logs": [
+                {
+                    "time": "17:41:32",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "17:41:32",
+                    "level": "WARNING",
+                    "message": "Arquivos ausentes: frontAkrk, frontDig, credAkrk, credDig, averbadosAkrk, averbadosDig, integradosFunc, esteirasFunc"
+                },
+                {
+                    "time": "17:41:32",
+                    "level": "INFO",
+                    "message": "Carregando arquivo: Planilha Base (Cessão)"
+                },
+                {
+                    "time": "17:41:32",
+                    "level": "INFO",
+                    "message": "Lendo arquivo Excel: CONTROLE_PLANILHA_CESSÃO 2025 - VINI AKRK+DIG 21.01.xlsx"
+                },
+                {
+                    "time": "17:41:43",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: CONTROLE_PLANILHA_CESSÃO 2025 - VINI AKRK+DIG 21.01.xlsx | Linhas: 73381"
+                },
+                {
+                    "time": "17:41:43",
+                    "level": "SUCCESS",
+                    "message": "Concluído: Planilha Base (Cessão) | 73381 linhas, 26 colunas"
+                },
+                {
+                    "time": "17:41:43",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): Validação FRONT AKRK"
+                },
+                {
+                    "time": "17:41:43",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): Validação FRONT DIG"
+                },
+                {
+                    "time": "17:41:43",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): Base Iniciados AKRK"
+                },
+                {
+                    "time": "17:41:43",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): Base Iniciados DIG"
+                },
+                {
+                    "time": "17:41:43",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): Base Averbados AKRK"
+                },
+                {
+                    "time": "17:41:43",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): Base Averbados DIG"
+                },
+                {
+                    "time": "17:41:43",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): Operações Realizadas (Função)"
+                },
+                {
+                    "time": "17:41:43",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): RLE / Esteiras (Função)"
+                },
+                {
+                    "time": "17:41:43",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "17:41:44",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "17:41:45",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "17:41:47",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-22_17-42-21",
+            "status": "FINISHED",
+            "started_at": "2026-01-22 17:42:21",
+            "finished_at": "2026-01-01/22/26 17:45:54",
+            "logs": [
+                {
+                    "time": "17:42:21",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "17:42:21",
+                    "level": "SUCCESS",
+                    "message": "Todos os arquivos foram selecionados."
+                },
+                {
+                    "time": "17:42:21",
+                    "level": "INFO",
+                    "message": "Carregando arquivo: Planilha Base (Cessão)"
+                },
+                {
+                    "time": "17:42:21",
+                    "level": "INFO",
+                    "message": "Lendo arquivo Excel: CONTROLE_PLANILHA_CESSÃO 2025 - VINI AKRK+DIG 21.01.xlsx"
+                },
+                {
+                    "time": "17:42:32",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: CONTROLE_PLANILHA_CESSÃO 2025 - VINI AKRK+DIG 21.01.xlsx | Linhas: 73381"
+                },
+                {
+                    "time": "17:42:32",
+                    "level": "SUCCESS",
+                    "message": "Concluído: Planilha Base (Cessão) | 73381 linhas, 26 colunas"
+                },
+                {
+                    "time": "17:42:32",
+                    "level": "INFO",
+                    "message": "Carregando arquivo: Validação FRONT AKRK"
+                },
+                {
+                    "time": "17:42:32",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE CRM AKRK 21.01.csv"
+                },
+                {
+                    "time": "17:42:36",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: BASE CRM AKRK 21.01.csv | Linhas: 596268"
+                },
+                {
+                    "time": "17:42:37",
+                    "level": "SUCCESS",
+                    "message": "Concluído: Validação FRONT AKRK | 596268 linhas, 32 colunas"
+                },
+                {
+                    "time": "17:42:37",
+                    "level": "INFO",
+                    "message": "Carregando arquivo: Validação FRONT DIG"
+                },
+                {
+                    "time": "17:42:37",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE CRM DIG 21.01.csv"
+                },
+                {
+                    "time": "17:42:44",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: BASE CRM DIG 21.01.csv | Linhas: 1000739"
+                },
+                {
+                    "time": "17:42:44",
+                    "level": "SUCCESS",
+                    "message": "Concluído: Validação FRONT DIG | 1000739 linhas, 32 colunas"
+                },
+                {
+                    "time": "17:42:44",
+                    "level": "INFO",
+                    "message": "Carregando arquivo: Base Iniciados AKRK"
+                },
+                {
+                    "time": "17:42:44",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE INICIADOS AKRK 12.01.csv"
+                },
+                {
+                    "time": "17:42:44",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE INICIADOS AKRK 12.01.csv"
+                },
+                {
+                    "time": "17:42:44",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE INICIADOS AKRK 12.01.csv"
+                },
+                {
+                    "time": "17:42:44",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE INICIADOS AKRK 12.01.csv"
+                },
+                {
+                    "time": "17:42:59",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: BASE INICIADOS AKRK 12.01.csv | Linhas: 777142"
+                },
+                {
+                    "time": "17:42:59",
+                    "level": "SUCCESS",
+                    "message": "Concluído: Base Iniciados AKRK | 777142 linhas, 97 colunas"
+                },
+                {
+                    "time": "17:42:59",
+                    "level": "INFO",
+                    "message": "Carregando arquivo: Base Iniciados DIG"
+                },
+                {
+                    "time": "17:42:59",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE INICIADOS DIG 12.01.csv"
+                },
+                {
+                    "time": "17:42:59",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE INICIADOS DIG 12.01.csv"
+                },
+                {
+                    "time": "17:42:59",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE INICIADOS DIG 12.01.csv"
+                },
+                {
+                    "time": "17:43:00",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE INICIADOS DIG 12.01.csv"
+                },
+                {
+                    "time": "17:43:01",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: BASE INICIADOS DIG 12.01.csv | Linhas: 74099"
+                },
+                {
+                    "time": "17:43:01",
+                    "level": "SUCCESS",
+                    "message": "Concluído: Base Iniciados DIG | 74099 linhas, 97 colunas"
+                },
+                {
+                    "time": "17:43:01",
+                    "level": "INFO",
+                    "message": "Carregando arquivo: Base Averbados AKRK"
+                },
+                {
+                    "time": "17:43:01",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE AVERBADOS AKRK 12.01.csv"
+                },
+                {
+                    "time": "17:43:01",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE AVERBADOS AKRK 12.01.csv"
+                },
+                {
+                    "time": "17:43:02",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE AVERBADOS AKRK 12.01.csv"
+                },
+                {
+                    "time": "17:43:02",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE AVERBADOS AKRK 12.01.csv"
+                },
+                {
+                    "time": "17:43:05",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: BASE AVERBADOS AKRK 12.01.csv | Linhas: 317963"
+                },
+                {
+                    "time": "17:43:05",
+                    "level": "SUCCESS",
+                    "message": "Concluído: Base Averbados AKRK | 317963 linhas, 27 colunas"
+                },
+                {
+                    "time": "17:43:05",
+                    "level": "INFO",
+                    "message": "Carregando arquivo: Base Averbados DIG"
+                },
+                {
+                    "time": "17:43:05",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE AVERBADOS DIG 12.01.csv"
+                },
+                {
+                    "time": "17:43:05",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE AVERBADOS DIG 12.01.csv"
+                },
+                {
+                    "time": "17:43:05",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE AVERBADOS DIG 12.01.csv"
+                },
+                {
+                    "time": "17:43:05",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE AVERBADOS DIG 12.01.csv"
+                },
+                {
+                    "time": "17:43:05",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: BASE AVERBADOS DIG 12.01.csv | Linhas: 37008"
+                },
+                {
+                    "time": "17:43:05",
+                    "level": "SUCCESS",
+                    "message": "Concluído: Base Averbados DIG | 37008 linhas, 27 colunas"
+                },
+                {
+                    "time": "17:43:05",
+                    "level": "INFO",
+                    "message": "Carregando arquivo: Operações Realizadas (Função)"
+                },
+                {
+                    "time": "17:43:05",
+                    "level": "INFO",
+                    "message": "Lendo arquivo Excel: OPERACOES REALIZADAS (COMPLETO) 2026.xlsx"
+                },
+                {
+                    "time": "17:43:18",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: OPERACOES REALIZADAS (COMPLETO) 2026.xlsx | Linhas: 42026"
+                },
+                {
+                    "time": "17:43:18",
+                    "level": "SUCCESS",
+                    "message": "Concluído: Operações Realizadas (Função) | 42026 linhas, 51 colunas"
+                },
+                {
+                    "time": "17:43:18",
+                    "level": "INFO",
+                    "message": "Carregando arquivo: RLE / Esteiras (Função)"
+                },
+                {
+                    "time": "17:43:18",
+                    "level": "INFO",
+                    "message": "Lendo arquivo Excel: RLE2026.xlsx"
+                },
+                {
+                    "time": "17:45:50",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: RLE2026.xlsx | Linhas: 277877"
+                },
+                {
+                    "time": "17:45:51",
+                    "level": "SUCCESS",
+                    "message": "Concluído: RLE / Esteiras (Função) | 277877 linhas, 91 colunas"
+                },
+                {
+                    "time": "17:45:51",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "17:45:52",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "17:45:53",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "17:45:54",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-22_17-48-16",
+            "status": "FINISHED",
+            "started_at": "2026-01-22 17:48:16",
+            "finished_at": "2026-01-01/22/26 17:48:31",
+            "logs": [
+                {
+                    "time": "17:48:16",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "17:48:16",
+                    "level": "WARNING",
+                    "message": "Arquivos ausentes: frontAkrk, frontDig, credAkrk, credDig, averbadosAkrk, averbadosDig, integradosFunc, esteirasFunc"
+                },
+                {
+                    "time": "17:48:16",
+                    "level": "INFO",
+                    "message": "Carregando arquivo: Planilha Base (Cessão)"
+                },
+                {
+                    "time": "17:48:16",
+                    "level": "INFO",
+                    "message": "Lendo arquivo Excel: CONTROLE_PLANILHA_CESSÃO 2025 - VINI AKRK+DIG 21.01.xlsx"
+                },
+                {
+                    "time": "17:48:28",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: CONTROLE_PLANILHA_CESSÃO 2025 - VINI AKRK+DIG 21.01.xlsx | Linhas: 73381"
+                },
+                {
+                    "time": "17:48:28",
+                    "level": "SUCCESS",
+                    "message": "Concluído: Planilha Base (Cessão) | 73381 linhas, 26 colunas"
+                },
+                {
+                    "time": "17:48:28",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): Validação FRONT AKRK"
+                },
+                {
+                    "time": "17:48:28",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): Validação FRONT DIG"
+                },
+                {
+                    "time": "17:48:28",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): Base Iniciados AKRK"
+                },
+                {
+                    "time": "17:48:28",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): Base Iniciados DIG"
+                },
+                {
+                    "time": "17:48:28",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): Base Averbados AKRK"
+                },
+                {
+                    "time": "17:48:28",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): Base Averbados DIG"
+                },
+                {
+                    "time": "17:48:28",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): Operações Realizadas (Função)"
+                },
+                {
+                    "time": "17:48:28",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): RLE / Esteiras (Função)"
+                },
+                {
+                    "time": "17:48:28",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "17:48:29",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "17:48:30",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "17:48:31",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-22_17-54-08",
+            "status": "ERROR",
+            "started_at": "2026-01-22 17:54:08",
+            "finished_at": "2026-01-01/22/26 17:54:08",
+            "logs": []
+        },
+        {
+            "execution_id": "2026-01-22_17-55-43",
+            "status": "FINISHED",
+            "started_at": "2026-01-22 17:55:43",
+            "finished_at": "2026-01-01/22/26 17:59:11",
+            "logs": [
+                {
+                    "time": "17:55:43",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "17:55:43",
+                    "level": "SUCCESS",
+                    "message": "Todos os arquivos foram selecionados."
+                },
+                {
+                    "time": "17:55:43",
+                    "level": "INFO",
+                    "message": "Carregando arquivo: Planilha Base (Cessão)"
+                },
+                {
+                    "time": "17:55:43",
+                    "level": "INFO",
+                    "message": "Lendo arquivo Excel: CONTROLE_PLANILHA_CESSÃO 2025 - VINI AKRK+DIG 21.01.xlsx"
+                },
+                {
+                    "time": "17:55:54",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: CONTROLE_PLANILHA_CESSÃO 2025 - VINI AKRK+DIG 21.01.xlsx | Linhas: 73381"
+                },
+                {
+                    "time": "17:55:54",
+                    "level": "SUCCESS",
+                    "message": "Concluído: Planilha Base (Cessão) | 73381 linhas, 26 colunas"
+                },
+                {
+                    "time": "17:55:54",
+                    "level": "INFO",
+                    "message": "Carregando arquivo: Validação FRONT AKRK"
+                },
+                {
+                    "time": "17:55:54",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE CRM AKRK 21.01.csv"
+                },
+                {
+                    "time": "17:55:58",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: BASE CRM AKRK 21.01.csv | Linhas: 596268"
+                },
+                {
+                    "time": "17:55:58",
+                    "level": "SUCCESS",
+                    "message": "Concluído: Validação FRONT AKRK | 596268 linhas, 32 colunas"
+                },
+                {
+                    "time": "17:55:58",
+                    "level": "INFO",
+                    "message": "Carregando arquivo: Validação FRONT DIG"
+                },
+                {
+                    "time": "17:55:58",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE CRM DIG 21.01.csv"
+                },
+                {
+                    "time": "17:56:04",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: BASE CRM DIG 21.01.csv | Linhas: 1000739"
+                },
+                {
+                    "time": "17:56:04",
+                    "level": "SUCCESS",
+                    "message": "Concluído: Validação FRONT DIG | 1000739 linhas, 32 colunas"
+                },
+                {
+                    "time": "17:56:04",
+                    "level": "INFO",
+                    "message": "Carregando arquivo: Base Iniciados AKRK"
+                },
+                {
+                    "time": "17:56:04",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE INICIADOS AKRK 12.01.csv"
+                },
+                {
+                    "time": "17:56:04",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE INICIADOS AKRK 12.01.csv"
+                },
+                {
+                    "time": "17:56:04",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE INICIADOS AKRK 12.01.csv"
+                },
+                {
+                    "time": "17:56:04",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE INICIADOS AKRK 12.01.csv"
+                },
+                {
+                    "time": "17:56:18",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: BASE INICIADOS AKRK 12.01.csv | Linhas: 777142"
+                },
+                {
+                    "time": "17:56:18",
+                    "level": "SUCCESS",
+                    "message": "Concluído: Base Iniciados AKRK | 777142 linhas, 97 colunas"
+                },
+                {
+                    "time": "17:56:18",
+                    "level": "INFO",
+                    "message": "Carregando arquivo: Base Iniciados DIG"
+                },
+                {
+                    "time": "17:56:18",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE INICIADOS DIG 12.01.csv"
+                },
+                {
+                    "time": "17:56:18",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE INICIADOS DIG 12.01.csv"
+                },
+                {
+                    "time": "17:56:18",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE INICIADOS DIG 12.01.csv"
+                },
+                {
+                    "time": "17:56:18",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE INICIADOS DIG 12.01.csv"
+                },
+                {
+                    "time": "17:56:20",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: BASE INICIADOS DIG 12.01.csv | Linhas: 74099"
+                },
+                {
+                    "time": "17:56:20",
+                    "level": "SUCCESS",
+                    "message": "Concluído: Base Iniciados DIG | 74099 linhas, 97 colunas"
+                },
+                {
+                    "time": "17:56:20",
+                    "level": "INFO",
+                    "message": "Carregando arquivo: Base Averbados AKRK"
+                },
+                {
+                    "time": "17:56:20",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE AVERBADOS AKRK 12.01.csv"
+                },
+                {
+                    "time": "17:56:20",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE AVERBADOS AKRK 12.01.csv"
+                },
+                {
+                    "time": "17:56:20",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE AVERBADOS AKRK 12.01.csv"
+                },
+                {
+                    "time": "17:56:20",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE AVERBADOS AKRK 12.01.csv"
+                },
+                {
+                    "time": "17:56:23",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: BASE AVERBADOS AKRK 12.01.csv | Linhas: 317963"
+                },
+                {
+                    "time": "17:56:23",
+                    "level": "SUCCESS",
+                    "message": "Concluído: Base Averbados AKRK | 317963 linhas, 27 colunas"
+                },
+                {
+                    "time": "17:56:23",
+                    "level": "INFO",
+                    "message": "Carregando arquivo: Base Averbados DIG"
+                },
+                {
+                    "time": "17:56:23",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE AVERBADOS DIG 12.01.csv"
+                },
+                {
+                    "time": "17:56:23",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE AVERBADOS DIG 12.01.csv"
+                },
+                {
+                    "time": "17:56:23",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE AVERBADOS DIG 12.01.csv"
+                },
+                {
+                    "time": "17:56:23",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE AVERBADOS DIG 12.01.csv"
+                },
+                {
+                    "time": "17:56:24",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: BASE AVERBADOS DIG 12.01.csv | Linhas: 37008"
+                },
+                {
+                    "time": "17:56:24",
+                    "level": "SUCCESS",
+                    "message": "Concluído: Base Averbados DIG | 37008 linhas, 27 colunas"
+                },
+                {
+                    "time": "17:56:24",
+                    "level": "INFO",
+                    "message": "Carregando arquivo: Operações Realizadas (Função)"
+                },
+                {
+                    "time": "17:56:24",
+                    "level": "INFO",
+                    "message": "Lendo arquivo Excel: OPERACOES REALIZADAS (COMPLETO) 2026.xlsx"
+                },
+                {
+                    "time": "17:56:36",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: OPERACOES REALIZADAS (COMPLETO) 2026.xlsx | Linhas: 42026"
+                },
+                {
+                    "time": "17:56:36",
+                    "level": "SUCCESS",
+                    "message": "Concluído: Operações Realizadas (Função) | 42026 linhas, 51 colunas"
+                },
+                {
+                    "time": "17:56:36",
+                    "level": "INFO",
+                    "message": "Carregando arquivo: RLE / Esteiras (Função)"
+                },
+                {
+                    "time": "17:56:36",
+                    "level": "INFO",
+                    "message": "Lendo arquivo Excel: RLE2026.xlsx"
+                },
+                {
+                    "time": "17:59:06",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: RLE2026.xlsx | Linhas: 277877"
+                },
+                {
+                    "time": "17:59:08",
+                    "level": "SUCCESS",
+                    "message": "Concluído: RLE / Esteiras (Função) | 277877 linhas, 91 colunas"
+                },
+                {
+                    "time": "17:59:08",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "17:59:09",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "17:59:10",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "17:59:11",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-22_18-08-09",
+            "status": "FINISHED",
+            "started_at": "2026-01-22 18:08:09",
+            "finished_at": "2026-01-01/22/26 18:08:27",
+            "logs": [
+                {
+                    "time": "18:08:09",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "18:08:09",
+                    "level": "WARNING",
+                    "message": "Arquivos ausentes: cessao, frontAkrk, frontDig, credDig, averbadosAkrk, averbadosDig, integradosFunc, esteirasFunc"
+                },
+                {
+                    "time": "18:08:09",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): Planilha Base (Cessão)"
+                },
+                {
+                    "time": "18:08:09",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): Validação FRONT AKRK"
+                },
+                {
+                    "time": "18:08:09",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): Validação FRONT DIG"
+                },
+                {
+                    "time": "18:08:09",
+                    "level": "INFO",
+                    "message": "Carregando arquivo: Base Iniciados AKRK"
+                },
+                {
+                    "time": "18:08:09",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE INICIADOS AKRK 12.01.csv"
+                },
+                {
+                    "time": "18:08:09",
+                    "level": "WARNING",
+                    "message": "Falhou ao ler BASE INICIADOS AKRK 12.01.csv com encoding=utf-8. Tentando próximo..."
+                },
+                {
+                    "time": "18:08:09",
+                    "level": "WARNING",
+                    "message": "Falhou ao ler BASE INICIADOS AKRK 12.01.csv com encoding=utf-8-sig. Tentando próximo..."
+                },
+                {
+                    "time": "18:08:09",
+                    "level": "WARNING",
+                    "message": "Falhou ao ler BASE INICIADOS AKRK 12.01.csv com encoding=cp1252. Tentando próximo..."
+                },
+                {
+                    "time": "18:08:24",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: BASE INICIADOS AKRK 12.01.csv | Linhas: 777142"
+                },
+                {
+                    "time": "18:08:24",
+                    "level": "SUCCESS",
+                    "message": "Concluído: Base Iniciados AKRK | 777142 linhas, 97 colunas"
+                },
+                {
+                    "time": "18:08:24",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): Base Iniciados DIG"
+                },
+                {
+                    "time": "18:08:24",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): Base Averbados AKRK"
+                },
+                {
+                    "time": "18:08:24",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): Base Averbados DIG"
+                },
+                {
+                    "time": "18:08:24",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): Operações Realizadas (Função)"
+                },
+                {
+                    "time": "18:08:24",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): RLE / Esteiras (Função)"
+                },
+                {
+                    "time": "18:08:24",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "18:08:25",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "18:08:26",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "18:08:27",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-22_18-09-23",
+            "status": "FINISHED",
+            "started_at": "2026-01-22 18:09:23",
+            "finished_at": "2026-01-01/22/26 18:09:41",
+            "logs": [
+                {
+                    "time": "18:09:23",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "18:09:23",
+                    "level": "WARNING",
+                    "message": "Arquivos ausentes: cessao, frontAkrk, frontDig, credAkrk, credDig, averbadosDig, integradosFunc, esteirasFunc"
+                },
+                {
+                    "time": "18:09:23",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): Planilha Base (Cessão)"
+                },
+                {
+                    "time": "18:09:23",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): Validação FRONT AKRK"
+                },
+                {
+                    "time": "18:09:23",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): Validação FRONT DIG"
+                },
+                {
+                    "time": "18:09:23",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): Base Iniciados AKRK"
+                },
+                {
+                    "time": "18:09:23",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): Base Iniciados DIG"
+                },
+                {
+                    "time": "18:09:23",
+                    "level": "INFO",
+                    "message": "Carregando arquivo: Base Averbados AKRK"
+                },
+                {
+                    "time": "18:09:23",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE INICIADOS AKRK 12.01.csv"
+                },
+                {
+                    "time": "18:09:23",
+                    "level": "WARNING",
+                    "message": "Falhou ao ler BASE INICIADOS AKRK 12.01.csv com encoding=utf-8. Tentando próximo..."
+                },
+                {
+                    "time": "18:09:38",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: BASE INICIADOS AKRK 12.01.csv | Linhas: 777142"
+                },
+                {
+                    "time": "18:09:38",
+                    "level": "SUCCESS",
+                    "message": "Concluído: Base Averbados AKRK | 777142 linhas, 97 colunas"
+                },
+                {
+                    "time": "18:09:38",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): Base Averbados DIG"
+                },
+                {
+                    "time": "18:09:38",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): Operações Realizadas (Função)"
+                },
+                {
+                    "time": "18:09:38",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): RLE / Esteiras (Função)"
+                },
+                {
+                    "time": "18:09:38",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "18:09:39",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "18:09:40",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "18:09:41",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
         }
     ]
 }
