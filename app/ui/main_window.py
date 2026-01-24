@@ -5,11 +5,7 @@ from tkinter.scrolledtext import ScrolledText
 from app.core.logger import UILogger
 from app.controller.robot_controller import RobotController, RobotStatus
 from app.core.file_manager import FileManager
-<<<<<<< HEAD
-from config.ui_config import FILE_ROWS
-=======
 from app.config.ui_config import FILE_ROWS
->>>>>>> backup
 from tkinter import ttk
 
 class MainWindow:
