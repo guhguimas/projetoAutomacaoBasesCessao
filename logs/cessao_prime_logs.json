@@ -1,0 +1,175 @@
+{
+    "executions": [
+        {
+            "execution_id": "2026-01-24_09-35-20",
+            "status": "ERROR",
+            "started_at": "2026-01-24 09:35:20",
+            "finished_at": "2026-01-01/24/26 09:35:20",
+            "logs": [
+                {
+                    "time": "09:35:20",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "09:35:20",
+                    "level": "WARNING",
+                    "message": "Arquivos ausentes: credAkrk, credDig, averbadosAkrk, averbadosDig, integradosFunc, esteirasFunc"
+                },
+                {
+                    "time": "09:35:20",
+                    "level": "INFO",
+                    "message": "Carregando arquivo: Planilha Base (Cessão)"
+                },
+                {
+                    "time": "09:35:20",
+                    "level": "INFO",
+                    "message": "Lendo arquivo Excel: CONTROLE_PLANILHA_CESSÃO 2025 - VINI AKRK+DIG 21.01.xlsx"
+                },
+                {
+                    "time": "09:35:20",
+                    "level": "ERROR",
+                    "message": "Erro inesperado: Fala ao ler Excel: CONTROLE_PLANILHA_CESSÃO 2025 - VINI AKRK+DIG 21.01.xlsx | Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl."
+                },
+                {
+                    "time": "09:35:20",
+                    "level": "ERROR",
+                    "message": "Erro inesperado (traceback completo):"
+                },
+                {
+                    "time": "09:35:20",
+                    "level": "ERROR",
+                    "message": "Traceback (most recent call last):\n  File \"C:\\Users\\GUH\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\compat\\_optional.py\", line 135, in import_optional_dependency\n    module = importlib.import_module(name)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Program Files\\Python312\\Lib\\importlib\\__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1324, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'openpyxl'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\GUH\\Documents\\# Gustavo\\# Desenvolvimentos\\# projetoCessao\\app\\core\\data_loader.py\", line 59, in _load_excel\n    df = pd.read_excel(\n         ^^^^^^^^^^^^^^\n  File \"C:\\Users\\GUH\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\io\\excel\\_base.py\", line 495, in read_excel\n    io = ExcelFile(\n         ^^^^^^^^^^\n  File \"C:\\Users\\GUH\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\io\\excel\\_base.py\", line 1567, in __init__\n    self._reader = self._engines[engine](\n                   ^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\GUH\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\io\\excel\\_openpyxl.py\", line 552, in __init__\n    import_optional_dependency(\"openpyxl\")\n  File \"C:\\Users\\GUH\\AppData\\Roaming\\Python\\Python312\\site-packages\\pandas\\compat\\_optional.py\", line 138, in import_optional_dependency\n    raise ImportError(msg)\nImportError: Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\GUH\\Documents\\# Gustavo\\# Desenvolvimentos\\# projetoCessao\\app\\controller\\robot_controller.py\", line 82, in _run\n    self._step_load_files()\n  File \"C:\\Users\\GUH\\Documents\\# Gustavo\\# Desenvolvimentos\\# projetoCessao\\app\\controller\\robot_controller.py\", line 148, in _step_load_files\n    df = self.loader.load(path)\n         ^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\GUH\\Documents\\# Gustavo\\# Desenvolvimentos\\# projetoCessao\\app\\core\\data_loader.py\", line 22, in load\n    return self._load_excel(path)\n           ^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\GUH\\Documents\\# Gustavo\\# Desenvolvimentos\\# projetoCessao\\app\\core\\data_loader.py\", line 68, in _load_excel\n    raise DataLoaderError(f\"Fala ao ler Excel: {os.path.basename(path)} | {e}\") from e\napp.core.data_loader.DataLoaderError: Fala ao ler Excel: CONTROLE_PLANILHA_CESSÃO 2025 - VINI AKRK+DIG 21.01.xlsx | Missing optional dependency 'openpyxl'.  Use pip or conda to install openpyxl.\n"
+                }
+            ]
+        },
+        {
+            "execution_id": "2026-01-24_09-36-27",
+            "status": "FINISHED",
+            "started_at": "2026-01-24 09:36:27",
+            "finished_at": "2026-01-01/24/26 09:36:47",
+            "logs": [
+                {
+                    "time": "09:36:27",
+                    "level": "SUCCESS",
+                    "message": "Iniciando processamento do robô"
+                },
+                {
+                    "time": "09:36:27",
+                    "level": "WARNING",
+                    "message": "Arquivos ausentes: credAkrk, credDig, averbadosAkrk, averbadosDig, integradosFunc, esteirasFunc"
+                },
+                {
+                    "time": "09:36:27",
+                    "level": "INFO",
+                    "message": "Carregando arquivo: Planilha Base (Cessão)"
+                },
+                {
+                    "time": "09:36:27",
+                    "level": "INFO",
+                    "message": "Lendo arquivo Excel: CONTROLE_PLANILHA_CESSÃO 2025 - VINI AKRK+DIG 21.01.xlsx"
+                },
+                {
+                    "time": "09:36:39",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: CONTROLE_PLANILHA_CESSÃO 2025 - VINI AKRK+DIG 21.01.xlsx | Linhas: 73381"
+                },
+                {
+                    "time": "09:36:39",
+                    "level": "SUCCESS",
+                    "message": "Concluído: Planilha Base (Cessão) | 73381 linhas, 26 colunas"
+                },
+                {
+                    "time": "09:36:39",
+                    "level": "INFO",
+                    "message": "Carregando arquivo: Validação FRONT AKRK"
+                },
+                {
+                    "time": "09:36:39",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE CRM AKRK 23.01.csv"
+                },
+                {
+                    "time": "09:36:41",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: BASE CRM AKRK 23.01.csv | Linhas: 596278"
+                },
+                {
+                    "time": "09:36:41",
+                    "level": "SUCCESS",
+                    "message": "Concluído: Validação FRONT AKRK | 596278 linhas, 32 colunas"
+                },
+                {
+                    "time": "09:36:41",
+                    "level": "INFO",
+                    "message": "Carregando arquivo: Validação FRONT DIG"
+                },
+                {
+                    "time": "09:36:41",
+                    "level": "INFO",
+                    "message": "Lendo arquivo CSV: BASE CRM DIG 23.01.csv"
+                },
+                {
+                    "time": "09:36:44",
+                    "level": "SUCCESS",
+                    "message": "Arquivo carregado com sucesso: BASE CRM DIG 23.01.csv | Linhas: 1007702"
+                },
+                {
+                    "time": "09:36:44",
+                    "level": "SUCCESS",
+                    "message": "Concluído: Validação FRONT DIG | 1007702 linhas, 32 colunas"
+                },
+                {
+                    "time": "09:36:44",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): Base Iniciados AKRK"
+                },
+                {
+                    "time": "09:36:44",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): Base Iniciados DIG"
+                },
+                {
+                    "time": "09:36:44",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): Base Averbados AKRK"
+                },
+                {
+                    "time": "09:36:44",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): Base Averbados DIG"
+                },
+                {
+                    "time": "09:36:44",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): Operações Realizadas (Função)"
+                },
+                {
+                    "time": "09:36:44",
+                    "level": "WARNING",
+                    "message": "Pulando (não selecionado): RLE / Esteiras (Função)"
+                },
+                {
+                    "time": "09:36:44",
+                    "level": "INFO",
+                    "message": "Etapa 2: Processando dados"
+                },
+                {
+                    "time": "09:36:45",
+                    "level": "INFO",
+                    "message": "Etapa 3: Validando contratos"
+                },
+                {
+                    "time": "09:36:46",
+                    "level": "INFO",
+                    "message": "Etapa 4: Exportando Planilha Cessao"
+                },
+                {
+                    "time": "09:36:47",
+                    "level": "SUCCESS",
+                    "message": "Processamento finalizado com sucesso"
+                }
+            ]
+        }
+    ]
+}
