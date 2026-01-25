@@ -145,8 +145,7 @@ class RobotController:
 
             self._log(f"Carregando arquivo: {label}", "INFO")
             
-            df = self.loader.load(path)
-            self.dataframes[key] = df
+            df = self.loader.load_with_schema(key, path)
 
             self._log(f"Concluído: {label} | {df.shape[0]} linhas, {df.shape[1]} colunas", "SUCCESS")
         
