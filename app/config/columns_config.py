@@ -1,14 +1,15 @@
 
 COLS_X = {
-    "Nº CONTRATO": "nrContrato",
-    "CCB INVESTIDOR": "nrCCB",
-    "OPERACAO": "dsOperacao",
-    "FUNDO": "dsFundo",
-    "DATA CESSÃO": "dtCessao",
-    "TAXA CESSÃO": "vlTaxaCessao",
+    "contrato": "Nº CONTRATO",
+    "ccb": "CCB INVESTIDOR",
+    "convenio": "CONVENIO",
+    "DATA CESSÃO": "DATA CESSÃO",
+    "TAXA CESSÃO": "TAXA CESSÃO",
+    "origem": "ORIGEM"
 }
 
 COLS_FRONT ={
-    "nrCCB": "nrCCB",
-    "dsOperacao": "dsOperacao",
+    "contrato": "nrContrato",
+    "ccb": "nrCCB",
+    "tipo_operacao": "dsOperacao",
 }
