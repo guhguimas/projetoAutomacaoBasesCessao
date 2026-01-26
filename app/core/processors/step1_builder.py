@@ -94,17 +94,17 @@ class Step1Builder:
             return pd.DataFrame()
         
         df_x["dsConvenio"] = df_x["dsConvenio"].astype(str).str.strip()
-        mask_fgts = df_x["dsConvenio"].str.upper().isin(EXCLUDED_CONVENIOS)
+        mask_excluded = df_x["dsConvenio"].str.upper().isin(EXCLUDED_CONVENIOS)
         before = len(df_x)
-        df_x = df_x[~mask_fgts].copy()
-        self._log(f"Filtro FGTS aplicado: {before} -> {len(df_x)}", "INFO")
+        df_x = df_x[~mask_excluded].copy()
+        df_x = df_x.reset_index(drop=True)
+        self._log(f"Filtro Convenio Cessao aplicado: {before} -> {len(df_x)}", "INFO")
 
         if self._stop():
             return pd.DataFrame()
 
         df_x["vlTaxaCessao"] = self._normalize_percent_to_fraction(df_x["vlTaxaCessao"])
-        df_y = pd.DataFrame(columns=Y_COLUMNS_FULL)
-        df_y = df_y.reindex(range(len(df_x)))
+        df_y = pd.DataFrame(DEFAULT_MISSING_VALUE, index=range(len(df_x)), columns=Y_COLUMNS_FULL)
         
         df_y["nrCCB"] = df_x["nrCCB"]
         df_y["dtCessao"] = df_x["dtCessao"]
