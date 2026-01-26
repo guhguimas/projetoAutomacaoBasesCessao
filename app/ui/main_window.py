@@ -22,6 +22,7 @@ class MainWindow:
         self._reset_progress()
         self.status_labels = {}
         self.file_name_labels = {}
+        self.export_format_var = tk.StringVar(value=DEFAULT_EXPORT_FORMAT)
         self._build_layout()
 
         self.logger = UILogger(self.log_area)
@@ -36,6 +37,7 @@ class MainWindow:
             progress_callback=self._safe_progress,
             file_manager=self.file_manager
             )
+
     
     def _build_layout(self):
         if self._layout_built:
@@ -93,6 +95,20 @@ class MainWindow:
         self.log_area.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
 
         self.layout_built = True
+
+        ttk.Label(self.button_frame, text="Exportar:").pack(side=tk.LEFT, padx=(20, 5))
+
+        self.export_format_combo = ttk.Combobox(
+            self.button_frame,
+            textvariable=self.export_format_var,
+            values=[label for label, value in EXPORT_FORMAT_OPTIONS],
+            state="readonly",
+            width=14
+        )
+        self.export_format_combo.current(
+            [value for label, value in EXPORT_FORMAT_OPTIONS].index(DEFAULT_EXPORT_FORMAT)
+        )
+        self.export_format_combo.pack(side=tk.LEFT, padx=5)
 
     def _update_buttons_state(self):
         if self.robot.status == RobotStatus.RUNNING:
@@ -154,6 +170,10 @@ class MainWindow:
                 self._reset_ui()                
                 return
 
+        label_selected = self.export_format_var.get()
+        export_format = dict(EXPORT_FORMAT_OPTIONS)[label_selected]
+
+        self.robot.export_format = export_format
         self.robot.start()
         self.logger.log("Botão INICIAR acionado", "INFO")
 

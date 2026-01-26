@@ -291,6 +291,21 @@ class RobotController:
         os.makedirs(self.output_dir, exist_ok=True)
         stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
+        stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+
+        if self.export_format == "csv":
+            csv_path = os.path.join(self.output_dir, f"cessao_Y_{stamp}.csv")
+            df_export.to_csv(csv_path, sep=EXPORT_CSV_SEP, encoding=EXPORT_CSV_ENCODING, index=False)
+            self._log(f"CSV exportado: {csv_path}", "SUCCESS")
+
+        elif self.export_format == "xlsx":
+            xlsx_path = os.path.join(self.output_dir, f"cessao_Y_{stamp}.xlsx")
+            df_export.to_excel(xlsx_path, index=False, engine="openpyxl")
+            self._log(f"Excel exportado: {xlsx_path}", "SUCCESS")
+
+        else:
+            self._log(f"Formato de exportação inválido: {self.export_format}", "ERROR")
+        
         if self.export_format == "csv":
             csv_path = os.path.join(self.output_dir, f"cessao_Y_{stamp}.csv")
             df_export.to_csv(
