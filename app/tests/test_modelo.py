@@ -4,6 +4,7 @@ from pathlib import Path
 import pandas as pd
 from app.core.data_loader import DataLoader
 from app.core.processors.step1_builder import Step1Builder
+from app.controller.robot_controller import format_vl_taxa_cessao
 
 def log_console(message, level="INFO"):
     print(f"[{level}] {message}")
@@ -11,9 +12,9 @@ def log_console(message, level="INFO"):
 if __name__ == "__main__":
     try:
         print(">>> INICIO TESTE: test_modelo_y.py", flush=True)  
-        path_x = r"C:\Users\GUH\Documents\# Gustavo\# Desenvolvimentos\_Docs\_Cessao\CONTROLE_PLANILHA_CESSÃO 2025 - VINI AKRK+DIG 21.01.xlsx"
-        path_front_akrk = r"C:\Users\GUH\Documents\# Gustavo\# Desenvolvimentos\_Docs\_Cessao\BASE CRM DIG 23.01 TESTE.csv"
-        path_front_dig = r"C:\Users\GUH\Documents\# Gustavo\# Desenvolvimentos\_Docs\_Cessao\BASE CRM DIG 23.01 TESTE.csv"
+        path_x = r"D:\#DESENVOLVIMENTOS\_Docs\CONTROLE_PLANILHA_CESSÃO 2025 - VINI AKRK+DIG 21.01.xlsx"
+        path_front_akrk = r"D:\#DESENVOLVIMENTOS\_Docs\BASE CRM DIG 23.01 TESTE.csv"
+        path_front_dig = r"D:\#DESENVOLVIMENTOS\_Docs\BASE CRM DIG 23.01 TESTE.csv"
 
         for p in [path_x, path_front_akrk, path_front_dig]:
             if not Path(p).exists():
@@ -32,6 +33,15 @@ if __name__ == "__main__":
         builder = Step1Builder(log_callback=log_console)
         print(">>> rodando Step1Builder...", flush=True)
         df_y = builder.build(df_x, df_front_akrk, df_front_dig)
+        
+        output_path = r"D:\#DESENVOLVIMENTOS\_Docs\ModeloTeste.xlsx"
+
+        if "vlTaxaCessao" in df_y.columns:
+            df_y["vlTaxaCessao"] = format_vl_taxa_cessao(df_y["vlTaxaCessao"], max_pct=3.99)
+
+        print(df_y["vlTaxaCessao"].head(10).tolist())
+
+        df_y.to_excel(output_path, index=False, engine="openpyxl")
 
         print(">>> Y gerado. linhas:", len(df_y), flush=True)    
         
@@ -43,10 +53,8 @@ if __name__ == "__main__":
 
         df_sample = df_y.head(30000).copy()
 
-        output_path = r"C:\Users\GUH\Documents\# Gustavo\# Desenvolvimentos\_Docs\_Cessao\ModeloTeste.xlsx"
         df_sample.to_excel(output_path, index=False)
         print("Arquivo modelo gerado em:", output_path)
-
         print(">>> FIM TESTE: OK", flush=True)
 
     except Exception as e:

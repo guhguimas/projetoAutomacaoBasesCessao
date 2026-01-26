@@ -273,3 +273,5 @@ Y_DATE_COLUMNS = [
     "dtAverbacao",
     "dtPrimeiroVencimentoAverbacao",
 ]
+
+MAX_TAXA_CESSAO_PCT = 10.0

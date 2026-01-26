@@ -102,6 +102,7 @@ class Step1Builder:
         if self._stop():
             return pd.DataFrame()
 
+        df_x["vlTaxaCessao"] = self._normalize_percent_to_fraction(df_x["vlTaxaCessao"])
         df_y = pd.DataFrame(columns=Y_COLUMNS_FULL)
         df_y = df_y.reindex(range(len(df_x)))
         
@@ -151,4 +152,13 @@ class Step1Builder:
             out.loc[~iso_mask] = pd.to_datetime(s.loc[~iso_mask], errors="coerce", dayfirst=True)
 
         return out.dt.date
-    
+
+    def _normalize_percent_to_fraction(self, series: pd.Series) -> pd.Series:
+        s = series.astype(str).str.strip()
+        s = s.str.replace("%", "", regex=False)
+        s = s.str.replace(".", "", regex=False)
+        s = s.str.replace(",", ".", regex=False)
+        
+        num = pd.to_numeric(s, errors="coerce")
+        return num / 100
+

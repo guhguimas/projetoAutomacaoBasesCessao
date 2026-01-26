@@ -3,13 +3,14 @@ import threading
 import time
 import traceback
 import pandas as pd
+import numpy as np
 from datetime import datetime
 from enum import Enum
 from app.logs.log_manager import LogManager
 from uuid import uuid4
 from app.core.data_loader import DataLoader, DataLoaderError
 from app.config.robot_config import FILE_PLAN
-from app.config.schemas import Y_DATE_COLUMNS, EXPORT_CSV_SEP, EXPORT_CSV_ENCODING
+from app.config.schemas import Y_DATE_COLUMNS, EXPORT_CSV_SEP, EXPORT_CSV_ENCODING, DEFAULT_MISSING_VALUE
 from app.core.processors.step1_builder import Step1Builder
 from openpyxl import load_workbook
 
@@ -21,6 +22,50 @@ class RobotStatus(Enum):
     FINISHED = "finished"
     ERROR = "error"
 
+def format_vl_taxa_cessao(series: pd.Series, max_pct: float = 3.99) -> pd.Series:
+    raw0 = series.astype(str).str.strip()
+
+    had_pct = raw0.str.contains("%", na=False)
+
+    raw = raw0.replace({"#N/D": "", "nan": "", "None": "", "": ""})
+    raw = raw.str.replace("\u00a0", " ", regex=False)
+    raw = raw.str.replace("%", "", regex=False)
+    raw = raw.str.replace(",", ".", regex=False)
+    raw = raw.str.replace(r"[^0-9\.\-]+", "", regex=True)
+
+    num = pd.to_numeric(raw, errors="coerce")
+
+    # ✅ aqui está o fix: começa como float com NaN
+    pct = pd.Series(np.nan, index=num.index, dtype="float64")
+
+    # 1) se veio com %, já é "pontos"
+    pct.loc[had_pct] = num.loc[had_pct]
+
+    # 2) sem %:
+    no_pct = ~had_pct
+
+    # <= 1 => fração -> pontos
+    m_frac = no_pct & num.notna() & (num >= 0) & (num <= 1)
+    pct.loc[m_frac] = (num.loc[m_frac] * 100)
+
+    # > 1 => já em pontos
+    m_pts = no_pct & num.notna() & (num > 1)
+    pct.loc[m_pts] = num.loc[m_pts]
+
+    # 3) correção de digitação: 16.5 -> 1.65 (divide por 10 até caber)
+    for _ in range(4):
+        mask = (~np.isnan(pct)) & (pct > max_pct) & (pct <= 1000)
+        if not mask.any():
+            break
+        pct.loc[mask] = pct.loc[mask] / 10
+
+    # 4) validação final (mantém só 0..100)
+    pct = pct.where((pct >= 0) & (pct <= 100), np.nan)
+
+    # saída como texto "1.85" / "#N/D"
+    out = pd.Series(np.where(np.isnan(pct), "#N/D", np.round(pct, 2)), index=num.index)
+    out = out.map(lambda x: x if x == "#N/D" else f"{float(x):.2f}")
+    return out
 
 class RobotController:
     def __init__(self, log_callback=None, status_callback=None, finish_callback=None, progress_callback=None, file_manager=None):
@@ -33,10 +78,10 @@ class RobotController:
         self.status_callback = status_callback
         self._thread = None
 
-        self.step1_builder = Step1Builder(
+        self.step1_builder = Step1Builder()
         log_callback=self._log,
         stop_callback=lambda: self._stop_event.is_set()
-)
+
         self.log_manager = LogManager()
         self.execution_id = None
 
@@ -211,43 +256,31 @@ class RobotController:
         csv_path = os.path.join(self.output_dir, f"cessao_Y_{stamp}.csv")
         xlsx_path = os.path.join(self.output_dir, f"cessao_Y_{stamp}.xlsx")
 
-        for col in Y_DATE_COLUMNS:
-            if col in df_y.columns:
-                df_y[col] = pd.to_datetime(df_y[col], errors="coerce", dayfirst=True).dt.date
+        df_export = df_y.copy()
 
-        df_y.to_csv(
+        for col in Y_DATE_COLUMNS:
+            if col in df_export.columns:
+                dt = pd.to_datetime(df_export[col], errors="coerce", dayfirst=True)
+                df_export[col] = dt.dt.date
+
+        if "vlTaxaCessao" in df_export.columns:
+            df_export["vlTaxaCessao"] = format_vl_taxa_cessao(df_export["vlTaxaCessao"], max_pct=3.99)
+        self._log("Amostra vlTaxaCessao (top 20): " + str(df_export["vlTaxaCessao"].head(20).tolist()), "INFO")
+
+        df_export.to_csv(
             csv_path,
             sep=EXPORT_CSV_SEP,
             encoding=EXPORT_CSV_ENCODING,
-            index=False,
-            date_format="%d/%m/%Y"
+            index=False
         )
         self._log(f"CSV exportado: {csv_path}", "SUCCESS")
 
-        df_y.to_excel(
-        xlsx_path,
-        index=False,
-        engine="openpyxl"
+        df_export.to_excel(
+            xlsx_path,
+            index=False,
+            engine="openpyxl"
         )
         self._log(f"Excel exportado: {xlsx_path}", "SUCCESS")
-
-        wb = load_workbook(xlsx_path)
-        ws = wb.active
-
-        # mapeia nome da coluna -> índice (1-based)
-        headers = [cell.value for cell in ws[1]]
-        col_index = {name: i+1 for i, name in enumerate(headers)}
-
-        date_cols = [c for c in Y_DATE_COLUMNS if c in col_index]
-
-        for col_name in date_cols:
-            idx = col_index[col_name]
-            for row in range(2, ws.max_row + 1):
-                cell = ws.cell(row=row, column=idx)
-                # Se a célula já for datetime/date, aplica formato
-                cell.number_format = "DD/MM/YYYY"
-
-        wb.save(xlsx_path)
         
     def _step_finalize(self):
         self._log("Etapa 5; Finalização")
@@ -269,3 +302,63 @@ class RobotController:
                 missing_required.append(f"{label} ({key})")
         
         return missing_required
+
+    def _parse_taxa_to_points(self, series: pd.Series) -> pd.Series:
+        s = series.astype(str).str.strip()
+
+        s = s.replace({"#N/D": "", "nan": "", "None": "", "": ""})
+
+        s = s.str.replace("%", "", regex=False)
+
+        s = s.str.replace("\u00a0", " ", regex=False).str.strip()
+
+        has_comma = s.str.contains(",", na=False)
+        s.loc[has_comma] = (
+            s.loc[has_comma]
+            .str.replace(".", "", regex=False)
+            .str.replace(",", ".", regex=False)
+        )
+
+        s = s.str.replace(r"[^0-9\.\-]+", "", regex=True)
+
+        num = pd.to_numeric(s, errors="coerce")
+
+        num = num.where(num.isna() | (num > 1), num * 100)
+
+        num = num.where(num.isna() | (num <= 100), pd.NA)
+
+        return num.round(2)
+
+    def _taxa_to_points_str(self, series: pd.Series, max_pct: float = 3.99) -> pd.Series:
+        raw = series.astype(str).str.strip()
+
+        raw = raw.replace({"#N/D": "", "nan": "", "None": "", "": ""})
+        raw = raw.str.replace("%", "", regex=False)
+        raw = raw.str.replace(",", ".", regex=False)
+        raw = raw.str.replace(r"[^0-9\.\-]+", "", regex=True)
+
+        num = pd.to_numeric(raw, errors="coerce")
+
+        frac = (num > 0) & (num < 1)
+        too_big_as_pct = frac & ((num * 100) > max_pct)
+
+        for _ in range(3):
+            adj = (num > 0) & (num < 1) & ((num * 100) > max_pct)
+            if not adj.any():
+                break
+            num = num.where(~adj, num / 10)
+
+        pp = num > 1
+        for _ in range(3):
+            adj = (num > max_pct) & (num <= 100)
+            if not adj.any():
+                break
+            num = num.where(~adj, num / 10)
+
+        num = num.where(num.isna() | (num > 1), num * 100)
+
+        num = num.where(num.isna() | (num <= 100), pd.NA)
+
+        out = num.round(2).map(lambda x: f"{x:.2f}" if pd.notna(x) else "#N/D")
+        return out
+
