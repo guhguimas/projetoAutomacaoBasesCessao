@@ -108,7 +108,8 @@ class Step1Builder:
         
         df_y["nrCCB"] = df_x["nrCCB"]
         df_y["dtCessao"] = df_x["dtCessao"]
-
+        df_x["dsOperacaoFront"] = df_x["dsOperacaoFront"].astype(str).str.replace("ª", "", regex=False).str.strip()
+        df_x.loc[df_x["dsOperacaoFront"].eq("") | df_x["dsOperacaoFront"].str.lower().eq("nan"), "dsOperacaoFront"] = DEFAULT_MISSING_VALUE
         df_y["dsOperacao"] = df_x["dsOperacaoFront"]
 
         df_y["dsFundo"] = df_x["dsFundo"]
