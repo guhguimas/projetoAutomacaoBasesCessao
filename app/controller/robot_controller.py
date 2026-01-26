@@ -1,12 +1,17 @@
+import os
 import threading
 import time
 import traceback
+import pandas as pd
 from datetime import datetime
 from enum import Enum
 from app.logs.log_manager import LogManager
 from uuid import uuid4
 from app.core.data_loader import DataLoader, DataLoaderError
 from app.config.robot_config import FILE_PLAN
+from app.config.schemas import Y_DATE_COLUMNS, EXPORT_CSV_SEP, EXPORT_CSV_ENCODING
+from app.core.processors.step1_builder import Step1Builder
+from openpyxl import load_workbook
 
 
 class RobotStatus(Enum):
@@ -27,7 +32,11 @@ class RobotController:
         self.log_callback = log_callback
         self.status_callback = status_callback
         self._thread = None
-        
+
+        self.step1_builder = Step1Builder(
+        log_callback=self._log,
+        stop_callback=lambda: self._stop_event.is_set()
+)
         self.log_manager = LogManager()
         self.execution_id = None
 
@@ -38,6 +47,8 @@ class RobotController:
         self.loader = DataLoader(csv_encoding="utf-8", csv_sep=";", log_callback=self._log)
         
         self.dataframes = {}
+
+        self.output_dir = os.path.join(os.getcwd(), "output")
 
     def _log(self, message, level="INFO"):
         if self.log_callback:
@@ -146,15 +157,35 @@ class RobotController:
             self._log(f"Carregando arquivo: {label}", "INFO")
             
             df = self.loader.load_with_schema(key, path)
-
+            self.dataframes[key] = df
             self._log(f"Concluído: {label} | {df.shape[0]} linhas, {df.shape[1]} colunas", "SUCCESS")
         
     def _step_process_data(self):
-        self._log("Etapa 2: Processando dados")
-        time.sleep(1)
+        self._log("Etapa 2: Processando dados", "INFO")
 
         if self._stop_event.is_set():
             return
+
+        df_x = self.dataframes.get("cessao")
+        df_front_akrk = self.dataframes.get("frontAkrk")
+        df_front_dig = self.dataframes.get("frontDig")
+
+        if df_x is None or df_x.empty:
+            self._log("Base 'cessao' não foi carregada (self.dataframes['cessao']).", "ERROR")
+            return
+
+        if (df_front_akrk is None or df_front_akrk.empty) and (df_front_dig is None or df_front_dig.empty):
+            self._log("FRONT AKRK e FRONT DIG não foram carregados.", "ERROR")
+            return
+
+        df_y = self.step1_builder.build(
+            df_x=df_x,
+            df_front_akrk=df_front_akrk if df_front_akrk is not None else pd.DataFrame(),
+            df_front_dig=df_front_dig if df_front_dig is not None else pd.DataFrame()
+        )
+
+        self.dataframes["y"] = df_y
+        self._log(f"Etapa 2 concluída: Planilha Y gerada | {len(df_y)} linhas", "SUCCESS")
         
     def _step_validate(self):
         self._log("Etapa 3: Validando contratos")
@@ -164,11 +195,59 @@ class RobotController:
             return
         
     def _step_export(self):
-        self._log("Etapa 4: Exportando Planilha Cessao")
-        time.sleep(1)
+        self._log("Etapa 4: Exportando Planilha Cessao", "INFO")
 
         if self._stop_event.is_set():
             return
+
+        df_y = self.dataframes.get("y")
+        if df_y is None or df_y.empty:
+            self._log("Nenhuma planilha Y encontrada para exportar.", "WARNING")
+            return
+
+        os.makedirs(self.output_dir, exist_ok=True)
+
+        stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        csv_path = os.path.join(self.output_dir, f"cessao_Y_{stamp}.csv")
+        xlsx_path = os.path.join(self.output_dir, f"cessao_Y_{stamp}.xlsx")
+
+        for col in Y_DATE_COLUMNS:
+            if col in df_y.columns:
+                df_y[col] = pd.to_datetime(df_y[col], errors="coerce", dayfirst=True).dt.date
+
+        df_y.to_csv(
+            csv_path,
+            sep=EXPORT_CSV_SEP,
+            encoding=EXPORT_CSV_ENCODING,
+            index=False,
+            date_format="%d/%m/%Y"
+        )
+        self._log(f"CSV exportado: {csv_path}", "SUCCESS")
+
+        df_y.to_excel(
+        xlsx_path,
+        index=False,
+        engine="openpyxl"
+        )
+        self._log(f"Excel exportado: {xlsx_path}", "SUCCESS")
+
+        wb = load_workbook(xlsx_path)
+        ws = wb.active
+
+        # mapeia nome da coluna -> índice (1-based)
+        headers = [cell.value for cell in ws[1]]
+        col_index = {name: i+1 for i, name in enumerate(headers)}
+
+        date_cols = [c for c in Y_DATE_COLUMNS if c in col_index]
+
+        for col_name in date_cols:
+            idx = col_index[col_name]
+            for row in range(2, ws.max_row + 1):
+                cell = ws.cell(row=row, column=idx)
+                # Se a célula já for datetime/date, aplica formato
+                cell.number_format = "DD/MM/YYYY"
+
+        wb.save(xlsx_path)
         
     def _step_finalize(self):
         self._log("Etapa 5; Finalização")

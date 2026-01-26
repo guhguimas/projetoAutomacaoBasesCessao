@@ -1,7 +1,9 @@
 import pandas as pd
+import re
 from app.config.columns_config import COLS_X, COLS_FRONT
 from app.config.schemas import DEFAULT_MISSING_VALUE, Y_COLUMNS_FULL
 from app.config.rules_config import DEFAULT_MISSING_VALUE, ALLOWED_CRM_OPERATIONS, EXCLUDED_CONVENIOS
+from app.config.schemas import Y_DATE_COLUMNS
 
 class Step1Builder:
     def __init__(self, logger=None, stop_check=None, log_callback=None, stop_callback=None):
@@ -18,6 +20,8 @@ class Step1Builder:
             self.log_callback(msg, level)
 
     def _stop(self):
+        if self.stop_callback:
+            return bool(self.stop_callback())
         return bool(self.stop_chek and self.stop_chek())
     
     def _norm_contract(self, s: pd.Series) -> pd.Series:
@@ -100,7 +104,7 @@ class Step1Builder:
 
         df_y = pd.DataFrame(columns=Y_COLUMNS_FULL)
         df_y = df_y.reindex(range(len(df_x)))
-
+        
         df_y["nrCCB"] = df_x["nrCCB"]
         df_y["dtCessao"] = df_x["dtCessao"]
 
@@ -117,7 +121,34 @@ class Step1Builder:
         df_y["codTabelas"] = df_x["codTabelas"]
         df_y["tabela"] = df_x["tabela"]
 
-        df_y = df_y.fillna(DEFAULT_MISSING_VALUE)
+        df_y["dtAverbacao"] = df_x.get("dtAverbacao", DEFAULT_MISSING_VALUE)
+        df_y["dtPrimeiroVencimentoCessao"] = df_x.get("dtPrimeiroVencimentoCessao", DEFAULT_MISSING_VALUE)
+        df_y["dtPrimeiroVencimentoAverbacao"] = df_x.get("dtPrimeiroVencimentoAverbacao", DEFAULT_MISSING_VALUE)
 
         self._log("Planilha Y inicial montada (layout + campos básicos)", "SUCCESS")
+        
+        for col in Y_DATE_COLUMNS:
+            if col in df_y.columns:
+                df_y[col] = self._normalize_date_only(df_y[col])
+        
+        df_y = df_y.fillna(DEFAULT_MISSING_VALUE)
         return df_y
+    
+    def _normalize_date_only(self, series: pd.Series) -> pd.Series:
+        if pd.api.types.is_datetime64_any_dtype(series):
+            return series.dt.date
+
+        s = series.astype(str).str.strip()
+
+        iso_mask = s.str.match(r"^\d{4}-\d{2}-\d{2}", na=False)
+
+        out = pd.Series([pd.NaT] * len(s), index=s.index, dtype="datetime64[ns]")
+
+        if iso_mask.any():
+            out.loc[iso_mask] = pd.to_datetime(s.loc[iso_mask], errors="coerce")
+
+        if (~iso_mask).any():
+            out.loc[~iso_mask] = pd.to_datetime(s.loc[~iso_mask], errors="coerce", dayfirst=True)
+
+        return out.dt.date
+    
