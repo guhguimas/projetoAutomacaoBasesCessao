@@ -23,6 +23,38 @@ class RobotStatus(Enum):
     ERROR = "error"
 
 def format_vl_taxa_cessao(series: pd.Series, max_pct: float = 3.99) -> pd.Series:
+    raw = series.astype(str).str.strip()
+
+    had_pct = raw.str.contains("%", na=False)
+
+    raw = raw.replace({"#N/D": "", "nan": "", "None": "", "": ""})
+    raw = raw.str.replace("%", "", regex=False)
+    raw = raw.str.replace("\u00a0", " ", regex=False) 
+    raw = raw.str.replace(",", ".", regex=False)
+    raw = raw.str.replace(r"[^0-9\.\-]+", "", regex=True)
+
+    num = pd.to_numeric(raw, errors="coerce")
+
+    pct = pd.Series(index=num.index, dtype="float64")
+    pct[:] = float("nan")
+
+    pct = pct.where(~had_pct, num)
+
+    no_pct = ~had_pct
+    pct = pct.where(~(no_pct & (num > 1)), num)
+    pct = pct.where(~(no_pct & (num > 0) & (num <= 1)), num * 100)
+
+    for _ in range(6):
+        mask = pct.notna() & (pct > max_pct) & (pct <= 1000)
+        if not mask.any():
+            break
+        pct = pct.where(~mask, pct / 10)
+
+    pct = pct.where(pct.notna() & (pct >= 0) & (pct <= 100), float("nan"))
+
+    return pct.round(2).map(lambda x: f"{x:.2f}" if pd.notna(x) else "#N/D")
+
+def format_vl_taxa_cessao(series: pd.Series, max_pct: float = 3.99) -> pd.Series:
     raw0 = series.astype(str).str.strip()
 
     had_pct = raw0.str.contains("%", na=False)
@@ -35,40 +67,32 @@ def format_vl_taxa_cessao(series: pd.Series, max_pct: float = 3.99) -> pd.Series
 
     num = pd.to_numeric(raw, errors="coerce")
 
-    # ✅ aqui está o fix: começa como float com NaN
     pct = pd.Series(np.nan, index=num.index, dtype="float64")
 
-    # 1) se veio com %, já é "pontos"
     pct.loc[had_pct] = num.loc[had_pct]
 
-    # 2) sem %:
     no_pct = ~had_pct
 
-    # <= 1 => fração -> pontos
     m_frac = no_pct & num.notna() & (num >= 0) & (num <= 1)
     pct.loc[m_frac] = (num.loc[m_frac] * 100)
 
-    # > 1 => já em pontos
     m_pts = no_pct & num.notna() & (num > 1)
     pct.loc[m_pts] = num.loc[m_pts]
 
-    # 3) correção de digitação: 16.5 -> 1.65 (divide por 10 até caber)
     for _ in range(4):
         mask = (~np.isnan(pct)) & (pct > max_pct) & (pct <= 1000)
         if not mask.any():
             break
         pct.loc[mask] = pct.loc[mask] / 10
 
-    # 4) validação final (mantém só 0..100)
     pct = pct.where((pct >= 0) & (pct <= 100), np.nan)
 
-    # saída como texto "1.85" / "#N/D"
     out = pd.Series(np.where(np.isnan(pct), "#N/D", np.round(pct, 2)), index=num.index)
     out = out.map(lambda x: x if x == "#N/D" else f"{float(x):.2f}")
     return out
 
 class RobotController:
-    def __init__(self, log_callback=None, status_callback=None, finish_callback=None, progress_callback=None, file_manager=None):
+    def __init__(self, log_callback=None, status_callback=None, finish_callback=None, progress_callback=None, file_manager=None, export_format="xlsx"):
         self.status = RobotStatus.IDLE
         self._stop_event = threading.Event()
         self.log = log_callback
@@ -94,6 +118,8 @@ class RobotController:
         self.dataframes = {}
 
         self.output_dir = os.path.join(os.getcwd(), "output")
+
+        self.export_format = export_format
 
     def _log(self, message, level="INFO"):
         if self.log_callback:
@@ -182,8 +208,8 @@ class RobotController:
 
     def _step_load_files(self):
         if not self.file_manager:
-            raise DataLoaderError(f"FileManager não foi informado no robô.")
-        
+            raise DataLoaderError("FileManager não foi informado no robô.")
+
         missing = self.file_manager.get_missing_files()
         if missing:
             self._log(f"Arquivos ausentes: {', '.join(missing)}", "WARNING")
@@ -193,17 +219,19 @@ class RobotController:
         for key, label, required in FILE_PLAN:
             if self._stop_event.is_set():
                 return
-            
+
             path = self.file_manager.files.get(key)
             if not path:
                 self._log(f"Pulando (não selecionado): {label}", "WARNING")
                 continue
 
             self._log(f"Carregando arquivo: {label}", "INFO")
-            
+
             df = self.loader.load_with_schema(key, path)
+
             self.dataframes[key] = df
-            self._log(f"Concluído: {label} | {df.shape[0]} linhas, {df.shape[1]} colunas", "SUCCESS")
+
+            self._log(f"Concluído: {label} | {df.shape[0]} linhas, {df.shape[1]} colunas","SUCCESS")
         
     def _step_process_data(self):
         self._log("Etapa 2: Processando dados", "INFO")
@@ -250,12 +278,6 @@ class RobotController:
             self._log("Nenhuma planilha Y encontrada para exportar.", "WARNING")
             return
 
-        os.makedirs(self.output_dir, exist_ok=True)
-
-        stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        csv_path = os.path.join(self.output_dir, f"cessao_Y_{stamp}.csv")
-        xlsx_path = os.path.join(self.output_dir, f"cessao_Y_{stamp}.xlsx")
-
         df_export = df_y.copy()
 
         for col in Y_DATE_COLUMNS:
@@ -265,16 +287,22 @@ class RobotController:
 
         if "vlTaxaCessao" in df_export.columns:
             df_export["vlTaxaCessao"] = format_vl_taxa_cessao(df_export["vlTaxaCessao"], max_pct=3.99)
-        self._log("Amostra vlTaxaCessao (top 20): " + str(df_export["vlTaxaCessao"].head(20).tolist()), "INFO")
 
-        df_export.to_csv(
-            csv_path,
-            sep=EXPORT_CSV_SEP,
-            encoding=EXPORT_CSV_ENCODING,
-            index=False
-        )
-        self._log(f"CSV exportado: {csv_path}", "SUCCESS")
+        os.makedirs(self.output_dir, exist_ok=True)
+        stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
+        if self.export_format == "csv":
+            csv_path = os.path.join(self.output_dir, f"cessao_Y_{stamp}.csv")
+            df_export.to_csv(
+                csv_path,
+                sep=EXPORT_CSV_SEP,
+                encoding=EXPORT_CSV_ENCODING,
+                index=False
+            )
+            self._log(f"CSV exportado: {csv_path}", "SUCCESS")
+            return
+
+        xlsx_path = os.path.join(self.output_dir, f"cessao_Y_{stamp}.xlsx")
         df_export.to_excel(
             xlsx_path,
             index=False,

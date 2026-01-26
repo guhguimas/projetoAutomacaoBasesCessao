@@ -5,7 +5,7 @@ from tkinter.scrolledtext import ScrolledText
 from app.core.logger import UILogger
 from app.controller.robot_controller import RobotController, RobotStatus
 from app.core.file_manager import FileManager
-from app.config.ui_config import FILE_ROWS
+from app.config.ui_config import FILE_ROWS, EXPORT_FORMAT_OPTIONS, DEFAULT_EXPORT_FORMAT
 from tkinter import ttk
 
 class MainWindow:
@@ -67,16 +67,6 @@ class MainWindow:
         row = tk.Frame(self.files_frame)
         row.pack(fill=tk.X, pady=2)
 
-        # lbl_name = tk.Label(row, text="Planilha Base (Cessão)", width=28, anchor="w")
-        # lbl_name.pack(side=tk.LEFT)
-
-        # self.lbl_status_cessao = tk.Label(row, text="Não selecionado", width=18, anchor="w")
-        # self.lbl_status_cessao.pack(side=tk.LEFT, padx=5)
-        # self.status_labels["cessao"] = self.lbl_status_cessao
-
-        # btn_select = tk.Button(row, text="Selecionar", width=12, command=lambda: self._select_file("cessao"))
-        # btn_select.pack(side=tk.RIGHT)
-        
         for key, text in FILE_ROWS:
             self._add_file_row(key, text)
 
@@ -255,3 +245,10 @@ class MainWindow:
 
     def _safe_progress(self, current_step, total_steps, message):
         self.root.after(0, self._update_progress, current_step, total_steps, message)
+
+    def _log(self, message, level="INFO"):
+        line = f"[{level}] {message}\n"
+        self.log_area.config(state=tk.NORMAL)
+        self.log_area.insert("end", line)
+        self.log_area.see("end")
+        self.log_area.config(state=tk.DISABLED)
