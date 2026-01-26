@@ -117,7 +117,13 @@ class Step1Builder:
         df_y["dsOrigem"] = df_x["dsOrigem"]
         df_y["vlTaxaCessao"] = df_x["vlTaxaCessao"]
 
-        df_y["nrContrato"] = df_x["nrContratoCred"]
+        nr_contrato = df_x["nrContratoCred"].astype(str).str.strip()
+        nr_ccb = df_x["nrCCB"].astype(str).str.strip()
+        mask_hifen = nr_contrato.eq("-")
+        nr_contrato = nr_contrato.where(~mask_hifen, nr_ccb.str.slice(0, 9))
+        nr_contrato = nr_contrato.replace({"": DEFAULT_MISSING_VALUE, "nan": DEFAULT_MISSING_VALUE}).fillna(DEFAULT_MISSING_VALUE)
+
+        df_y["nrContrato"] = nr_contrato
 
         df_y["cnpj"] = df_x["cnpj"]
         df_y["codTabelas"] = df_x["codTabelas"]
@@ -127,6 +133,7 @@ class Step1Builder:
         df_y["dtPrimeiroVencimentoCessao"] = df_x.get("dtPrimeiroVencimentoCessao", DEFAULT_MISSING_VALUE)
         df_y["dtPrimeiroVencimentoAverbacao"] = df_x.get("dtPrimeiroVencimentoAverbacao", DEFAULT_MISSING_VALUE)
 
+        self._log(f"nrContratoCred '-' substituídos por LEFT(nrCCB,9): {mask_hifen.sum()}", "INFO")
         self._log("Planilha Y inicial montada (layout + campos básicos)", "SUCCESS")
         
         for col in Y_DATE_COLUMNS:
