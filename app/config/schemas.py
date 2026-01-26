@@ -266,3 +266,10 @@ ALLOWED_CRM_OPERATIONS = {
     "SEM CESSAO",
     DEFAULT_MISSING_VALUE.upper(),  # "#N/D"
 }
+
+Y_DATE_COLUMNS = [
+    "dtCessao",
+    "dtPrimeiroVencimentoCessao",
+    "dtAverbacao",
+    "dtPrimeiroVencimentoAverbacao",
+]
