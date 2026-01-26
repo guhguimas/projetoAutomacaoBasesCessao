@@ -14,4 +14,7 @@ ALLOWED_CRM_OPERATIONS = {
 }
 
 # Convênios que devem ser removidos
-EXCLUDED_CONVENIOS = {"FGTS"}
+EXCLUDED_CONVENIOS = {
+    "FGTS",
+    "CRED TRAB",
+}
