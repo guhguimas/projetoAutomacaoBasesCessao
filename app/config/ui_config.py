@@ -9,3 +9,10 @@ FILE_ROWS = [
     ("integradosFunc", "Operações Realizadas (Completo)"),
     ("esteirasFunc", "RLE / Esterias Função"),
 ]
+
+EXPORT_FORMAT_OPTIONS = [
+    ("Excel (.xlsx)", "xlsx"),
+    ("CSV (.csv)", "csv"),
+]
+
+DEFAULT_EXPORT_FORMAT = "xlsx"
