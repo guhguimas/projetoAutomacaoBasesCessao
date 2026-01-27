@@ -13,6 +13,7 @@ from app.config.robot_config import FILE_PLAN
 from app.config.schemas import Y_DATE_COLUMNS, EXPORT_CSV_SEP, EXPORT_CSV_ENCODING, DEFAULT_MISSING_VALUE
 from app.core.processors.step1_builder import Step1Builder
 from openpyxl import load_workbook
+from app.core.processors.step2_enricher import Step2Enricher
 
 
 class RobotStatus(Enum):
@@ -54,43 +55,6 @@ def format_vl_taxa_cessao(series: pd.Series, max_pct: float = 3.99) -> pd.Series
 
     return pct.round(2).map(lambda x: f"{x:.2f}" if pd.notna(x) else "#N/D")
 
-def format_vl_taxa_cessao(series: pd.Series, max_pct: float = 3.99) -> pd.Series:
-    raw0 = series.astype(str).str.strip()
-
-    had_pct = raw0.str.contains("%", na=False)
-
-    raw = raw0.replace({"#N/D": "", "nan": "", "None": "", "": ""})
-    raw = raw.str.replace("\u00a0", " ", regex=False)
-    raw = raw.str.replace("%", "", regex=False)
-    raw = raw.str.replace(",", ".", regex=False)
-    raw = raw.str.replace(r"[^0-9\.\-]+", "", regex=True)
-
-    num = pd.to_numeric(raw, errors="coerce")
-
-    pct = pd.Series(np.nan, index=num.index, dtype="float64")
-
-    pct.loc[had_pct] = num.loc[had_pct]
-
-    no_pct = ~had_pct
-
-    m_frac = no_pct & num.notna() & (num >= 0) & (num <= 1)
-    pct.loc[m_frac] = (num.loc[m_frac] * 100)
-
-    m_pts = no_pct & num.notna() & (num > 1)
-    pct.loc[m_pts] = num.loc[m_pts]
-
-    for _ in range(4):
-        mask = (~np.isnan(pct)) & (pct > max_pct) & (pct <= 1000)
-        if not mask.any():
-            break
-        pct.loc[mask] = pct.loc[mask] / 10
-
-    pct = pct.where((pct >= 0) & (pct <= 100), np.nan)
-
-    out = pd.Series(np.where(np.isnan(pct), "#N/D", np.round(pct, 2)), index=num.index)
-    out = out.map(lambda x: x if x == "#N/D" else f"{float(x):.2f}")
-    return out
-
 class RobotController:
     def __init__(self, log_callback=None, status_callback=None, finish_callback=None, progress_callback=None, file_manager=None, export_format="xlsx"):
         self.status = RobotStatus.IDLE
@@ -102,10 +66,14 @@ class RobotController:
         self.status_callback = status_callback
         self._thread = None
 
-        self.step1_builder = Step1Builder()
+        self.step1_builder = Step1Builder(
         log_callback=self._log,
-        stop_callback=lambda: self._stop_event.is_set()
+        stop_callback=lambda: self._stop_event.is_set())
 
+        self.step2_enricher = Step2Enricher(
+        log_callback=self._log,
+        stop_callback=lambda: self._stop_event.is_set())
+        
         self.log_manager = LogManager()
         self.execution_id = None
 
@@ -244,21 +212,33 @@ class RobotController:
         df_front_dig = self.dataframes.get("frontDig")
 
         if df_x is None or df_x.empty:
-            self._log("Base 'cessao' não foi carregada (self.dataframes['cessao']).", "ERROR")
+            self._log("Base 'cessao' não foi carregada ou está vazia.", "ERROR")
             return
 
         if (df_front_akrk is None or df_front_akrk.empty) and (df_front_dig is None or df_front_dig.empty):
-            self._log("FRONT AKRK e FRONT DIG não foram carregados.", "ERROR")
+            self._log("FRONT AKRK e FRONT DIG não foram carregados (ou estão vazios).", "ERROR")
             return
 
-        df_y = self.step1_builder.build(
-            df_x=df_x,
-            df_front_akrk=df_front_akrk if df_front_akrk is not None else pd.DataFrame(),
-            df_front_dig=df_front_dig if df_front_dig is not None else pd.DataFrame()
-        )
+        # 2.0 = Step1 (gera Y básica)
+        df_y_base = self.step1_builder.build(df_x, df_front_akrk, df_front_dig)
+        self._log(f"Etapa 2.0: Y base gerada: {len(df_y_base)} linhas", "SUCCESS")
 
-        self.dataframes["y"] = df_y
-        self._log(f"Etapa 2 concluída: Planilha Y gerada | {len(df_y)} linhas", "SUCCESS")
+        if self._stop_event.is_set():
+            return
+
+        # 2.1 = Step2 (enriquece Y)
+        df_y_final = self.step2_enricher.build(
+        df_y=df_y_base,
+        df_cred_akrk=self.dataframes.get("credAkrk"),
+        df_cred_dig=self.dataframes.get("credDig"),
+        df_averb_akrk=self.dataframes.get("averbadosAkrk"),
+        df_averb_dig=self.dataframes.get("averbadosDig"),
+        df_integrados=self.dataframes.get("integradosFunc"),
+        df_esteiras=self.dataframes.get("esteirasFunc"),
+            )
+
+        self.dataframes["y"] = df_y_final
+        self._log(f"Etapa 2 concluída: Y final pronta: {len(df_y_final)} linhas", "SUCCESS")
         
     def _step_validate(self):
         self._log("Etapa 3: Validando contratos")
@@ -278,6 +258,9 @@ class RobotController:
             self._log("Nenhuma planilha Y encontrada para exportar.", "WARNING")
             return
 
+        # agora df_y existe, então pode logar
+        self._log(f"Export: colunas Y = {len(df_y.columns)} | linhas = {len(df_y)}", "INFO")
+
         df_export = df_y.copy()
 
         for col in Y_DATE_COLUMNS:
@@ -289,8 +272,6 @@ class RobotController:
             df_export["vlTaxaCessao"] = format_vl_taxa_cessao(df_export["vlTaxaCessao"], max_pct=3.99)
 
         os.makedirs(self.output_dir, exist_ok=True)
-        stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-
         stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
 
         if self.export_format == "csv":
@@ -305,25 +286,6 @@ class RobotController:
 
         else:
             self._log(f"Formato de exportação inválido: {self.export_format}", "ERROR")
-        
-        if self.export_format == "csv":
-            csv_path = os.path.join(self.output_dir, f"cessao_Y_{stamp}.csv")
-            df_export.to_csv(
-                csv_path,
-                sep=EXPORT_CSV_SEP,
-                encoding=EXPORT_CSV_ENCODING,
-                index=False
-            )
-            self._log(f"CSV exportado: {csv_path}", "SUCCESS")
-            return
-
-        xlsx_path = os.path.join(self.output_dir, f"cessao_Y_{stamp}.xlsx")
-        df_export.to_excel(
-            xlsx_path,
-            index=False,
-            engine="openpyxl"
-        )
-        self._log(f"Excel exportado: {xlsx_path}", "SUCCESS")
         
     def _step_finalize(self):
         self._log("Etapa 5; Finalização")
