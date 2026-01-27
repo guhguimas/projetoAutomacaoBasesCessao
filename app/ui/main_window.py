@@ -62,7 +62,15 @@ class MainWindow:
             command=self._on_stop
         )
         self.btn_stop.pack(side=tk.LEFT, padx=5)
-
+        
+        self.btn_clear_logs = tk.Button(
+        self.button_frame,
+        text="LIMPAR LOGS",
+        width=12,
+        command=self._on_clear_logs
+        )
+        self.btn_clear_logs.pack(side=tk.LEFT, padx=5)
+        
         self.files_frame = tk.LabelFrame(self.root, text="Seleção de Arquivos", padx=10, pady=10)
         self.files_frame.pack(fill=tk.X, padx=10, pady=5)
 
@@ -137,7 +145,6 @@ class MainWindow:
         for key, label in self.file_name_labels.items():
             label.config(text="-")
 
-        self._clear_logs()
         self.logger.log("Programa resetado.", "INFO")
 
     def run(self):
@@ -145,6 +152,7 @@ class MainWindow:
 
     def _on_start(self):
         self._reset_progress()
+        self._clear_logs()
 
         if self.robot and self.robot.status == RobotStatus.RUNNING:
             self.logger.log("Robô já está em execução", "WARNING")
@@ -177,8 +185,6 @@ class MainWindow:
         self.robot.start()
         self.logger.log("Botão INICIAR acionado", "INFO")
 
-        self._clear_logs()
-            
     def _on_stop(self):
         if self.robot:
             self.robot.stop()
@@ -196,7 +202,7 @@ class MainWindow:
         if self.robot.status == RobotStatus.ERROR:
             return
         
-        self.root.after(0, self._reset_ui)
+        self.root.after(0, self._refresh_file_status_labels)
 
     def _safe_log(self, message, level="INFO"):
         self.root.after(0, self.logger.log, message, level)
@@ -272,3 +278,7 @@ class MainWindow:
         self.log_area.insert("end", line)
         self.log_area.see("end")
         self.log_area.config(state=tk.DISABLED)
+
+    def _on_clear_logs(self):
+        self._clear_logs()
+        self.logger.log("Logs limpos pelo usuário.", "INFO")
